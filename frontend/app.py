@@ -1,0 +1,138 @@
+import sys
+import os
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+
+# Add the parent directory to the path so we can import the backend module
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from flask import Flask, render_template, request, jsonify, session
+from backend.game import NFLGame
+
+app = Flask(__name__)
+app.secret_key = 'nfl_game_secret_key'  # For session management
+
+# Create a global game instance that persists between requests
+# This avoids having to serialize/deserialize the entire players database
+GAME_INSTANCES = {}
+
+@app.route('/')
+def index():
+    """Render the main game page."""
+    return render_template('index.html')
+
+@app.route('/start_game', methods=['POST'])
+def start_game():
+    """Start a new game and return the initial state."""
+    # Create a new game instance
+    game = NFLGame()
+    game_state = game.start_game()
+    
+    # Generate a unique session ID if not already present
+    if 'session_id' not in session:
+        import uuid
+        session['session_id'] = str(uuid.uuid4())
+    
+    # Store the game instance in our server-side dictionary
+    session_id = session['session_id']
+    GAME_INSTANCES[session_id] = game
+    
+    return jsonify(game_state)
+
+@app.route('/submit_answer', methods=['POST'])
+def submit_answer():
+    """Submit a player name and get the result."""
+    # Get the player name from the request
+    player_name = request.json.get('player_name', '')
+    logger.debug(f"Received answer: {player_name}")
+    
+    # Get the session ID
+    session_id = session.get('session_id')
+    if not session_id or session_id not in GAME_INSTANCES:
+        logger.warning(f"No game found for session_id: {session_id}")
+        return jsonify({"error": "No active game. Please start a new game."}), 400
+    
+    # Get the game instance
+    game = GAME_INSTANCES[session_id]
+    
+    # Submit the answer and get the result
+    try:
+        result = game.submit_answer(player_name)
+        logger.debug(f"Result: {result}")
+        return jsonify(result)
+    except Exception as e:
+        logger.exception(f"Error processing answer: {e}")
+        return jsonify({"error": "An error occurred processing your answer."}), 500
+
+@app.route('/game_state', methods=['GET'])
+def get_game_state():
+    """Get the current game state."""
+    # Get the session ID
+    session_id = session.get('session_id')
+    if not session_id or session_id not in GAME_INSTANCES:
+        return jsonify({"error": "No active game. Please start a new game."}), 400
+    
+    # Get the game instance
+    game = GAME_INSTANCES[session_id]
+    
+    return jsonify(game.get_game_state())
+
+@app.route('/timer_expired', methods=['POST'])
+def timer_expired():
+    """Handle timer expiration."""
+    # Get the session ID
+    session_id = session.get('session_id')
+    if not session_id or session_id not in GAME_INSTANCES:
+        logger.warning(f"No game found for session_id: {session_id}")
+        return jsonify({"error": "No active game. Please start a new game."}), 400
+    
+    # Get the game instance
+    game = GAME_INSTANCES[session_id]
+    
+    # Handle timer expiration
+    try:
+        result = game.timer_expired()
+        logger.debug(f"Timer expired result: {result}")
+        return jsonify(result)
+    except Exception as e:
+        logger.exception(f"Error handling timer expiration: {e}")
+        return jsonify({"error": "An error occurred processing the timer expiration."}), 500
+
+@app.route('/check_duplicates', methods=['POST'])
+def check_duplicates():
+    """Check if there are multiple players with the same name."""
+    data = request.json
+    player_name = data.get('player_name', '')
+    
+    if not player_name:
+        return jsonify({"error": "No player name provided"}), 400
+    
+    # Parse the name into first and last
+    name_parts = player_name.split()
+    if len(name_parts) < 2:
+        return jsonify({"error": "Invalid player name format"}), 400
+    
+    first_name = name_parts[0].lower()
+    last_name = name_parts[1].lower()
+    
+    # Get the game instance to access the players list
+    session_id = session.get('session_id')
+    if not session_id or session_id not in GAME_INSTANCES:
+        return jsonify({"has_duplicates": False}), 200
+    
+    game = GAME_INSTANCES[session_id]
+    
+    # Count players with the same name
+    count = 0
+    for player in game.players:
+        if (player.get('firstName', '').lower() == first_name and 
+            player.get('lastName', '').lower() == last_name):
+            count += 1
+    
+    return jsonify({"has_duplicates": count > 1}), 200
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5001, debug=True) 

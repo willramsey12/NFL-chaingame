@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFL Player Chain | The Ultimate Football Knowledge Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --nfl-blue: #013369;
+            --nfl-red: #d50a0a;
+            --success: #3c8e4e;
+            --warning: #f39c12;
+            --danger: #d50a0a;
+            --light: #f8f9fa;
+            --dark: #1a1a1a;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ef 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: var(--nfl-blue);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://www.nfl.com/static/fabric/images/bgs/texture-dark.svg');
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        header h1 {
+            position: relative;
+            z-index: 1;
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        header p {
+            position: relative;
+            z-index: 1;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+        
+        .game-container {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+        
+        .welcome-screen {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        
+        .welcome-screen h2 {
+            color: var(--nfl-blue);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .welcome-screen p {
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background-color: var(--nfl-blue);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .btn:hover {
+            background-color: #0147a5;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .btn-red {
+            background-color: var(--nfl-red);
+        }
+        
+        .btn-red:hover {
+            background-color: #c00;
+        }
+        
+        .player-info {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            border-left: 4px solid var(--nfl-blue);
+            transition: var(--transition);
+        }
+        
+        .player-info:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+        }
+        
+        .player-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            margin: 1rem auto;
+            max-width: 300px;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .player-card::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 30px;
+            background-color: var(--nfl-red);
+            clip-path: polygon(100% 0, 0 0, 100% 100%);
+        }
+        
+        .player-avatar {
+            width: 80px;
+            height: 80px;
+            background-color: #eee;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid var(--nfl-blue);
+            transition: var(--transition);
+        }
+        
+        .player-avatar i {
+            font-size: 2.5rem;
+            color: var(--nfl-blue);
+        }
+        
+        .player-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--nfl-blue);
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .player-name::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--nfl-red);
+            transform: translateX(-50%);
+        }
+        
+        .player-position {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            padding: 0.2rem 0.8rem;
+            background-color: rgba(1, 51, 105, 0.1);
+            border-radius: 50px;
+        }
+        
+        .player-team {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 0.5rem;
+            display: none;
+        }
+        
+        .player-college {
+            font-size: 0.8rem;
+            color: #888;
+            font-style: italic;
+        }
+        
+        .next-player-prompt {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .next-player-prompt p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+        
+        .next-letter {
+            display: inline-block;
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            background-color: var(--nfl-red);
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            border-radius: 50%;
+            margin: 1rem 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            position: relative;
+            transition: transform 0.3s ease;
+            animation: pulse-letter 2s infinite;
+        }
+        
+        @keyframes pulse-letter {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .instruction-note {
+            font-size: 0.9rem;
+            color: #777;
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+        
+        .input-container {
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .input-wrapper {
+            position: relative;
+            width: 70%;
+            margin-right: 10px;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            transition: var(--transition);
+            outline: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        input[type="text"]:focus {
+            border-color: var(--nfl-blue);
+            box-shadow: 0 0 0 3px rgba(1, 51, 105, 0.2);
+        }
+        
+        .timer-container {
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0 2rem;
+        }
+        
+        .timer {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--nfl-blue);
+            background-color: rgba(1, 51, 105, 0.1);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .timer i {
+            margin-right: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .timer.warning {
+            color: var(--warning);
+            background-color: rgba(243, 156, 18, 0.2);
+            animation: pulse 1s infinite;
+        }
+        
+        .timer.danger {
+            color: var(--danger);
+            background-color: rgba(213, 10, 10, 0.2);
+            animation: pulse 0.5s infinite;
+        }
+        
+        .game-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            padding: 1rem;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.5rem 1rem;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--nfl-blue);
+            margin-bottom: 0.2rem;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #777;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .message {
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            border-left: 4px solid;
+            animation: fade-in 0.3s ease;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .message.error {
+            background-color: rgba(213, 10, 10, 0.1);
+            color: var(--danger);
+            border-color: var(--danger);
+        }
+        
+        .message.success {
+            background-color: rgba(60, 142, 78, 0.1);
+            color: var(--success);
+            border-color: var(--success);
+        }
+        
+        .message i {
+            margin-right: 0.5rem;
+        }
+        
+        .game-over {
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(213, 10, 10, 0.1);
+            border-radius: 10px;
+            margin: 2rem 0;
+            border: 2px solid var(--danger);
+            animation: fade-in 0.5s ease;
+        }
+        
+        .game-over h2 {
+            color: var(--danger);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .game-over p {
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #f0f;
+            animation: confetti-fall 5s ease-in-out infinite;
+            z-index: 1000;
+        }
+        
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+        
+        .streak-counter {
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            background-color: var(--nfl-red);
+            color: white;
+            font-size: 0.8rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 50px;
+            font-weight: 700;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .loading-spinner {
+            display: inline-block;
+            width: 1.5rem;
+            height: 1.5rem;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 0.5rem;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .hint-container {
+            margin: 1rem 0;
+            text-align: center;
+        }
+        
+        .hint-text {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            background-color: rgba(1, 51, 105, 0.05);
+            border-radius: 8px;
+            display: inline-block;
+        }
+        
+        .final-score {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 1rem 0 2rem;
+        }
+        
+        .score-value {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--nfl-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .score-label {
+            font-size: 1.2rem;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--nfl-blue);
+            color: rgba(255,255,255,0.8);
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .game-container {
+                padding: 1.5rem;
+            }
+            
+            .player-name {
+                font-size: 1.2rem;
+            }
+            
+            .next-letter {
+                font-size: 2.5rem;
+                width: 60px;
+                height: 60px;
+                line-height: 60px;
+            }
+            
+            .input-wrapper {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .input-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .timer {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NFL Player Chain</h1>
+        <p>Test your NFL knowledge in this fast-paced name game</p>
+    </header>
+    
+    <div class="container">
+        <div class="game-container" id="welcome-screen">
+            <div class="welcome-screen">
+                <h2>Welcome to NFL Player Chain</h2>
+                <p>Name NFL players where each player's first name starts with the first letter of the previous player's last name. You have 2 minutes for each turn. How many can you name before time runs out?</p>
+                <button id="start-game" class="btn"><i class="fas fa-football-ball"></i> Start New Game</button>
+            </div>
+        </div>
+        
+        <div class="game-container" id="game-area" style="display: none;">
+            <div class="timer-container">
+                <div class="timer" id="timer"><i class="fas fa-clock"></i> 2:00</div>
+            </div>
+            
+            <div class="player-info">
+                <p>Current Player:</p>
+                <div class="player-card">
+                    <div class="player-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="player-name" id="current-player"></div>
+                    <div class="player-position" id="current-position"></div>
+                    <div class="player-team" id="current-team"></div>
+                    <div class="player-college" id="current-college"></div>
+                </div>
+            </div>
+            
+            <div class="next-player-prompt">
+                <p>Name a player whose <strong>first name</strong> starts with:</p>
+                <div class="next-letter" id="next-letter"></div>
+                <p class="instruction-note">(First letter of the previous player's last name)</p>
+            </div>
+            
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <input type="text" id="player-input" placeholder="Enter NFL player name (First Last)" autocomplete="off">
+                </div>
+                <button id="submit-answer" class="btn"><i class="fas fa-check"></i> Submit</button>
+            </div>
+            
+            <div class="hint-container" style="display: none;">
+                <button id="hint-btn" class="btn btn-red"><i class="fas fa-lightbulb"></i> Get Hint</button>
+                <div class="hint-text" id="hint-text" style="display: none;"></div>
+            </div>
+            
+            <div id="message-area" class="message" style="display: none;"></div>
+            
+            <div class="game-stats">
+                <div class="stat-item">
+                    <div class="stat-value" id="lives-count">3</div>
+                    <div class="stat-label">Lives</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="used-players-count">0</div>
+                    <div class="stat-label">Players Named</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="streak-count">0</div>
+                    <div class="stat-label">Streak</div>
+                </div>
+            </div>
+            
+            <div id="game-over" class="game-over" style="display: none;">
+                <h2>Game Over!</h2>
+                <p>You've lost all your lives. Great effort!</p>
+                <div class="final-score">
+                    <div class="score-value" id="final-score">0</div>
+                    <div class="score-label">Players Named</div>
+                </div>
+                <button id="play-again" class="btn"><i class="fas fa-redo"></i> Play Again</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        &copy; 2024 NFL Player Chain | Data sourced from NFL records
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const welcomeScreen = document.getElementById('welcome-screen');
+            const startGameBtn = document.getElementById('start-game');
+            const playAgainBtn = document.getElementById('play-again');
+            const gameArea = document.getElementById('game-area');
+            const currentPlayerElement = document.getElementById('current-player');
+            const currentPositionElement = document.getElementById('current-position');
+            const currentTeamElement = document.getElementById('current-team');
+            const currentCollegeElement = document.getElementById('current-college');
+            const nextLetterElement = document.getElementById('next-letter');
+            const playerInput = document.getElementById('player-input');
+            const submitAnswerBtn = document.getElementById('submit-answer');
+            const messageArea = document.getElementById('message-area');
+            const livesCount = document.getElementById('lives-count');
+            const usedPlayersCount = document.getElementById('used-players-count');
+            const streakCount = document.getElementById('streak-count');
+            const finalScore = document.getElementById('final-score');
+            const gameOverElement = document.getElementById('game-over');
+            const timerElement = document.getElementById('timer');
+            const hintBtn = document.getElementById('hint-btn');
+            const hintText = document.getElementById('hint-text');
+            const hintContainer = document.querySelector('.hint-container');
+            
+            let timerInterval;
+            let timeLeft;
+            let currentStreak = 0;
+            let currentGame = {};
+            let soundEffects = {
+                correct: new Audio('https://assets.mixkit.co/active_storage/sfx/2000/2000.wav'),
+                wrong: new Audio('https://assets.mixkit.co/active_storage/sfx/2003/2003.wav'),
+                timeUp: new Audio('https://assets.mixkit.co/active_storage/sfx/1018/1018.wav'),
+                gameOver: new Audio('https://assets.mixkit.co/active_storage/sfx/2000/2003.wav')
+            };
+            
+            // Set audio volume
+            Object.values(soundEffects).forEach(sound => {
+                sound.volume = 0.3;
+            });
+            
+            function createConfetti() {
+                const colors = ['#FFC700', '#FF0000', '#2E3192', '#009E49', '#FF7BAC'];
+                const confettiCount = 100;
+                
+                for (let i = 0; i < confettiCount; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                    confetti.style.animationDelay = (Math.random() * 2) + 's';
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 5000);
+                }
+            }
+            
+            function startTimer() {
+                clearInterval(timerInterval);
+                timeLeft = 120; // 2 minutes in seconds
+                updateTimerDisplay();
+                
+                timerElement.classList.remove('warning', 'danger');
+                
+                timerInterval = setInterval(() => {
+                    timeLeft--;
+                    updateTimerDisplay();
+                    
+                    if (timeLeft <= 30 && timeLeft > 10) {
+                        timerElement.classList.add('warning');
+                        timerElement.classList.remove('danger');
+                    } else if (timeLeft <= 10) {
+                        timerElement.classList.remove('warning');
+                        timerElement.classList.add('danger');
+                    }
+                    
+                    if (timeLeft <= 0) {
+                        clearInterval(timerInterval);
+                        handleTimerExpired();
+                    }
+                }, 1000);
+            }
+            
+            function updateTimerDisplay() {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                timerElement.innerHTML = `<i class="fas fa-clock"></i> ${minutes}:${seconds.toString().padStart(2, '0')}`;
+            }
+            
+            function handleTimerExpired() {
+                soundEffects.timeUp.play();
+                
+                fetch('/timer_expired', {
+                    method: 'POST'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    showMessage(`<i class="fas fa-exclamation-circle"></i> ${data.message}`, 'error');
+                    livesCount.textContent = data.lives;
+                    currentStreak = 0;
+                    streakCount.textContent = currentStreak;
+                    
+                    if (data.game_over) {
+                        handleGameOver();
+                    } else {
+                        startTimer(); // Start a new timer for the next turn
+                    }
+                });
+            }
+            
+            function showMessage(message, type) {
+                messageArea.innerHTML = message;
+                messageArea.className = `message ${type}`;
+                messageArea.style.display = 'block';
+                
+                // Auto hide after 5 seconds
+                setTimeout(() => {
+                    messageArea.style.opacity = '0';
+                    setTimeout(() => {
+                        messageArea.style.display = 'none';
+                        messageArea.style.opacity = '1';
+                    }, 300);
+                }, 5000);
+            }
+            
+            function handleGameOver() {
+                gameOverElement.style.display = 'block';
+                playerInput.disabled = true;
+                submitAnswerBtn.disabled = true;
+                hintBtn.disabled = true;
+                clearInterval(timerInterval);
+                
+                const totalPlayers = parseInt(usedPlayersCount.textContent, 10);
+                finalScore.textContent = totalPlayers;
+                
+                soundEffects.gameOver.play();
+                
+                // Save to localStorage for high score tracking
+                saveGameStats(totalPlayers);
+            }
+            
+            function saveGameStats(score) {
+                const highScore = localStorage.getItem('nflGameHighScore') || 0;
+                if (score > highScore) {
+                    localStorage.setItem('nflGameHighScore', score);
+                }
+                
+                // Record game history
+                const gameHistory = JSON.parse(localStorage.getItem('nflGameHistory') || '[]');
+                gameHistory.push({
+                    date: new Date().toISOString(),
+                    score: score
+                });
+                
+                // Keep only last 10 games
+                if (gameHistory.length > 10) {
+                    gameHistory.shift();
+                }
+                
+                localStorage.setItem('nflGameHistory', JSON.stringify(gameHistory));
+            }
+            
+            function updatePlayerCard(playerData) {
+                const player = playerData.current_player;
+                const position = /\(([^)]+)\)/.exec(player)[1];
+                const name = player.replace(/\s*\([^)]*\)\s*/, '');
+                
+                currentPlayerElement.textContent = name;
+                currentPositionElement.textContent = position;
+                
+                // Display only college info
+                const college = playerData.college || 'Unknown College';
+                
+                // Hide team element and only show college
+                currentTeamElement.style.display = 'none';
+                
+                currentCollegeElement.textContent = college;
+            }
+            
+            function checkForNameDuplicates(playerName) {
+                // Disable duplicate name checking functionality 
+                // Function kept for compatibility but doesn't add any indicators
+            }
+            
+            function getRandomHint() {
+                const letter = nextLetterElement.textContent;
+                const hints = [
+                    `Try a quarterback whose name starts with "${letter}"`,
+                    `Think of running backs with names starting with "${letter}"`,
+                    `What about wide receivers with first names starting with "${letter}"?`,
+                    `Consider defensive players whose names begin with "${letter}"`,
+                    `There's a famous ${letter === 'T' ? 'Tom' : letter === 'A' ? 'Aaron' : letter === 'J' ? 'Jerry' : letter === 'M' ? 'Michael' : letter + 'ames'} in the NFL...`
+                ];
+                
+                return hints[Math.floor(Math.random() * hints.length)];
+            }
+            
+            // Start a new game
+            function startNewGame() {
+                welcomeScreen.style.display = 'none';
+                gameArea.style.display = 'block';
+                gameOverElement.style.display = 'none';
+                messageArea.style.display = 'none';
+                hintContainer.style.display = 'block';
+                hintText.style.display = 'none';
+                
+                playerInput.disabled = false;
+                submitAnswerBtn.disabled = false;
+                hintBtn.disabled = false;
+                
+                currentStreak = 0;
+                streakCount.textContent = currentStreak;
+                
+                fetch('/start_game', {
+                    method: 'POST'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    currentGame = data;
+                    updatePlayerCard(data);
+                    nextLetterElement.textContent = data.next_required_letter;
+                    livesCount.textContent = data.lives;
+                    usedPlayersCount.textContent = data.used_players;
+                    
+                    // Start the timer
+                    startTimer();
+                    
+                    // Focus on the input field
+                    playerInput.value = '';
+                    playerInput.focus();
+                })
+                .catch(error => {
+                    console.error('Error starting game:', error);
+                    showMessage('<i class="fas fa-exclamation-triangle"></i> Error starting game. Please try again.', 'error');
+                });
+            }
+            
+            startGameBtn.addEventListener('click', startNewGame);
+            playAgainBtn.addEventListener('click', startNewGame);
+            
+            // Hint button
+            hintBtn.addEventListener('click', function() {
+                hintText.textContent = getRandomHint();
+                hintText.style.display = 'block';
+                
+                // Disable hint button temporarily
+                hintBtn.disabled = true;
+                setTimeout(() => {
+                    hintBtn.disabled = false;
+                    hintText.style.display = 'none';
+                }, 10000);
+            });
+            
+            // Submit an answer
+            submitAnswerBtn.addEventListener('click', submitAnswer);
+            playerInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    submitAnswer();
+                }
+            });
+            
+            function submitAnswer() {
+                const playerName = playerInput.value.trim();
+                if (!playerName) return;
+                
+                submitAnswerBtn.innerHTML = '<div class="loading-spinner"></div> Checking...';
+                submitAnswerBtn.disabled = true;
+                
+                fetch('/submit_answer', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ player_name: playerName })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    submitAnswerBtn.innerHTML = '<i class="fas fa-check"></i> Submit';
+                    submitAnswerBtn.disabled = false;
+                    
+                    // Display message with icon
+                    if (data.valid) {
+                        showMessage(`<i class="fas fa-check-circle"></i> ${data.message}`, 'success');
+                        soundEffects.correct.play();
+                        
+                        // Update current player and next letter
+                        currentGame = data;
+                        updatePlayerCard(data);
+                        nextLetterElement.textContent = data.next_required_letter;
+                        usedPlayersCount.textContent = data.used_players;
+                        
+                        // Update streak
+                        currentStreak++;
+                        streakCount.textContent = currentStreak;
+                        
+                        // Show confetti on streaks of 5+
+                        if (currentStreak % 5 === 0 && currentStreak > 0) {
+                            createConfetti();
+                        }
+                        
+                        // Reset timer for next turn
+                        startTimer();
+                        
+                        // Clear the input field and focus
+                        playerInput.value = '';
+                        playerInput.focus();
+                    } else {
+                        // Error handling based on error_type
+                        let icon = 'fa-times-circle';
+                        let message = data.message;
+                        
+                        switch(data.error_type) {
+                            case 'format':
+                                icon = 'fa-info-circle';
+                                break;
+                            case 'wrong_letter':
+                                icon = 'fa-exclamation-circle';
+                                break;
+                            case 'not_found':
+                                icon = 'fa-question-circle';
+                                break;
+                            case 'already_used':
+                                icon = 'fa-exclamation-triangle';
+                                // Simplify the error message for already used players
+                                message = "This player has already been used.";
+                                break;
+                        }
+                        
+                        showMessage(`<i class="fas ${icon}"></i> ${message}`, 'error');
+                        soundEffects.wrong.play();
+                    }
+                    
+                    // Check if game is over
+                    if (data.game_over) {
+                        handleGameOver();
+                    }
+                })
+                .catch(error => {
+                    console.error('Error submitting answer:', error);
+                    submitAnswerBtn.innerHTML = '<i class="fas fa-check"></i> Submit';
+                    submitAnswerBtn.disabled = false;
+                    showMessage('<i class="fas fa-exclamation-triangle"></i> Network error. Please try again.', 'error');
+                });
+            }
+            
+            // Check if browser supports audio
+            function checkAudioSupport() {
+                const audio = document.createElement('audio');
+                if (!audio.canPlayType) {
+                    // Browser doesn't support audio
+                    soundEffects = {
+                        correct: { play: function() {} },
+                        wrong: { play: function() {} },
+                        timeUp: { play: function() {} },
+                        gameOver: { play: function() {} }
+                    };
+                }
+            }
+            
+            checkAudioSupport();
+        });
+    </script>
+</body>
+</html> 

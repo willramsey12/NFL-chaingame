@@ -1,0 +1,292 @@
+2025-03-12 20:08:50,750 - __main__ - INFO - Created backup of current database at: /Users/willramsey/Desktop/nfl-game/data/backups/nfl_players_backup_20250312_200850.json
+2025-03-12 20:08:50,754 - __main__ - INFO - Loaded 9511 players from existing database
+2025-03-12 20:08:50,927 - __main__ - ERROR - Error getting players for Arizona Cardinals in 2023: list index out of range
+2025-03-12 20:08:51,504 - __main__ - ERROR - Error getting players for Atlanta Falcons in 2023: list index out of range
+2025-03-12 20:08:52,101 - __main__ - ERROR - Error getting players for Baltimore Ravens in 2023: list index out of range
+2025-03-12 20:08:52,676 - __main__ - ERROR - Error getting players for Buffalo Bills in 2023: list index out of range
+2025-03-12 20:08:53,254 - __main__ - ERROR - Error getting players for Carolina Panthers in 2023: list index out of range
+2025-03-12 20:08:53,831 - __main__ - ERROR - Error getting players for Chicago Bears in 2023: list index out of range
+2025-03-12 20:08:54,506 - __main__ - ERROR - Error getting players for Cincinnati Bengals in 2023: list index out of range
+2025-03-12 20:08:55,077 - __main__ - ERROR - Error getting players for Cleveland Browns in 2023: list index out of range
+2025-03-12 20:08:55,648 - __main__ - ERROR - Error getting players for Dallas Cowboys in 2023: list index out of range
+2025-03-12 20:08:56,224 - __main__ - ERROR - Error getting players for Denver Broncos in 2023: list index out of range
+2025-03-12 20:08:56,779 - __main__ - ERROR - Error getting players for Detroit Lions in 2023: list index out of range
+2025-03-12 20:08:57,373 - __main__ - ERROR - Error getting players for Green Bay Packers in 2023: list index out of range
+2025-03-12 20:08:57,957 - __main__ - ERROR - Error getting players for Houston Texans in 2023: list index out of range
+2025-03-12 20:08:58,540 - __main__ - ERROR - Error getting players for Indianapolis Colts in 2023: list index out of range
+2025-03-12 20:08:59,117 - __main__ - ERROR - Error getting players for Jacksonville Jaguars in 2023: list index out of range
+2025-03-12 20:08:59,700 - __main__ - ERROR - Error getting players for Kansas City Chiefs in 2023: list index out of range
+2025-03-12 20:09:00,292 - __main__ - ERROR - Error getting players for Las Vegas Raiders in 2023: list index out of range
+2025-03-12 20:09:00,862 - __main__ - ERROR - Error getting players for Los Angeles Chargers in 2023: list index out of range
+2025-03-12 20:09:01,443 - __main__ - ERROR - Error getting players for Los Angeles Rams in 2023: list index out of range
+2025-03-12 20:09:01,984 - __main__ - ERROR - Error getting players for Miami Dolphins in 2023: list index out of range
+2025-03-12 20:09:02,550 - __main__ - ERROR - Error getting players for Minnesota Vikings in 2023: list index out of range
+2025-03-12 20:09:03,132 - __main__ - ERROR - Error getting players for New England Patriots in 2023: list index out of range
+2025-03-12 20:09:03,729 - __main__ - ERROR - Error getting players for New Orleans Saints in 2023: list index out of range
+2025-03-12 20:09:04,323 - __main__ - ERROR - Error getting players for New York Giants in 2023: list index out of range
+2025-03-12 20:09:04,908 - __main__ - ERROR - Error getting players for New York Jets in 2023: list index out of range
+2025-03-12 20:09:05,484 - __main__ - ERROR - Error getting players for Philadelphia Eagles in 2023: list index out of range
+2025-03-12 20:09:06,062 - __main__ - ERROR - Error getting players for Pittsburgh Steelers in 2023: list index out of range
+2025-03-12 20:09:06,658 - __main__ - ERROR - Error getting players for San Francisco 49ers in 2023: list index out of range
+2025-03-12 20:09:07,230 - __main__ - ERROR - Error getting players for Seattle Seahawks in 2023: list index out of range
+2025-03-12 20:09:07,787 - __main__ - ERROR - Error getting players for Tampa Bay Buccaneers in 2023: list index out of range
+2025-03-12 20:09:08,380 - __main__ - ERROR - Error getting players for Tennessee Titans in 2023: list index out of range
+2025-03-12 20:09:08,972 - __main__ - ERROR - Error getting players for Washington Commanders in 2023: list index out of range
+2025-03-12 20:09:09,553 - __main__ - ERROR - Error getting players for Arizona Cardinals in 2022: list index out of range
+2025-03-12 20:09:10,144 - __main__ - ERROR - Error getting players for Atlanta Falcons in 2022: list index out of range
+2025-03-12 20:09:10,721 - __main__ - ERROR - Error getting players for Baltimore Ravens in 2022: list index out of range
+2025-03-12 20:09:11,299 - __main__ - ERROR - Error getting players for Buffalo Bills in 2022: list index out of range
+2025-03-12 20:09:11,913 - __main__ - ERROR - Error getting players for Carolina Panthers in 2022: list index out of range
+2025-03-12 20:09:12,570 - __main__ - ERROR - Error getting players for Chicago Bears in 2022: list index out of range
+2025-03-12 20:09:13,283 - __main__ - ERROR - Error getting players for Cincinnati Bengals in 2022: list index out of range
+2025-03-12 20:09:13,843 - __main__ - ERROR - Error getting players for Cleveland Browns in 2022: list index out of range
+2025-03-12 20:09:14,422 - __main__ - ERROR - Error getting players for Dallas Cowboys in 2022: list index out of range
+2025-03-12 20:09:14,991 - __main__ - ERROR - Error getting players for Denver Broncos in 2022: list index out of range
+2025-03-12 20:09:15,564 - __main__ - ERROR - Error getting players for Detroit Lions in 2022: list index out of range
+2025-03-12 20:09:16,148 - __main__ - ERROR - Error getting players for Green Bay Packers in 2022: list index out of range
+2025-03-12 20:09:16,758 - __main__ - ERROR - Error getting players for Houston Texans in 2022: list index out of range
+2025-03-12 20:09:17,352 - __main__ - ERROR - Error getting players for Indianapolis Colts in 2022: list index out of range
+2025-03-12 20:09:17,953 - __main__ - ERROR - Error getting players for Jacksonville Jaguars in 2022: list index out of range
+2025-03-12 20:09:18,548 - __main__ - ERROR - Error getting players for Kansas City Chiefs in 2022: list index out of range
+2025-03-12 20:09:19,093 - __main__ - ERROR - Error getting players for Las Vegas Raiders in 2022: list index out of range
+2025-03-12 20:09:19,640 - __main__ - ERROR - Error getting players for Los Angeles Chargers in 2022: list index out of range
+2025-03-12 20:09:20,233 - __main__ - ERROR - Error getting players for Los Angeles Rams in 2022: list index out of range
+2025-03-12 20:09:20,800 - __main__ - ERROR - Error getting players for Miami Dolphins in 2022: list index out of range
+2025-03-12 20:09:21,377 - __main__ - ERROR - Error getting players for Minnesota Vikings in 2022: list index out of range
+2025-03-12 20:09:21,952 - __main__ - ERROR - Error getting players for New England Patriots in 2022: list index out of range
+2025-03-12 20:09:22,507 - __main__ - ERROR - Error getting players for New Orleans Saints in 2022: list index out of range
+2025-03-12 20:09:23,062 - __main__ - ERROR - Error getting players for New York Giants in 2022: list index out of range
+2025-03-12 20:09:23,648 - __main__ - ERROR - Error getting players for New York Jets in 2022: list index out of range
+2025-03-12 20:09:24,248 - __main__ - ERROR - Error getting players for Philadelphia Eagles in 2022: list index out of range
+2025-03-12 20:09:24,834 - __main__ - ERROR - Error getting players for Pittsburgh Steelers in 2022: list index out of range
+2025-03-12 20:09:25,424 - __main__ - ERROR - Error getting players for San Francisco 49ers in 2022: list index out of range
+2025-03-12 20:09:26,010 - __main__ - ERROR - Error getting players for Seattle Seahawks in 2022: list index out of range
+2025-03-12 20:09:26,565 - __main__ - ERROR - Error getting players for Tampa Bay Buccaneers in 2022: list index out of range
+2025-03-12 20:09:27,127 - __main__ - ERROR - Error getting players for Tennessee Titans in 2022: list index out of range
+2025-03-12 20:09:27,696 - __main__ - ERROR - Error getting players for Washington Commanders in 2022: list index out of range
+2025-03-12 20:09:28,278 - __main__ - ERROR - Error getting players for Arizona Cardinals in 2021: list index out of range
+2025-03-12 20:09:28,918 - __main__ - ERROR - Error getting players for Atlanta Falcons in 2021: list index out of range
+2025-03-12 20:09:29,526 - __main__ - ERROR - Error getting players for Baltimore Ravens in 2021: list index out of range
+2025-03-12 20:09:30,104 - __main__ - ERROR - Error getting players for Buffalo Bills in 2021: list index out of range
+2025-03-12 20:09:30,667 - __main__ - ERROR - Error getting players for Carolina Panthers in 2021: list index out of range
+2025-03-12 20:09:31,257 - __main__ - ERROR - Error getting players for Chicago Bears in 2021: list index out of range
+2025-03-12 20:09:31,839 - __main__ - ERROR - Error getting players for Cincinnati Bengals in 2021: list index out of range
+2025-03-12 20:09:32,454 - __main__ - ERROR - Error getting players for Cleveland Browns in 2021: list index out of range
+2025-03-12 20:09:33,092 - __main__ - ERROR - Error getting players for Dallas Cowboys in 2021: list index out of range
+2025-03-12 20:09:33,743 - __main__ - ERROR - Error getting players for Denver Broncos in 2021: list index out of range
+2025-03-12 20:09:34,336 - __main__ - ERROR - Error getting players for Detroit Lions in 2021: list index out of range
+2025-03-12 20:09:34,928 - __main__ - ERROR - Error getting players for Green Bay Packers in 2021: list index out of range
+2025-03-12 20:09:35,500 - __main__ - ERROR - Error getting players for Houston Texans in 2021: list index out of range
+2025-03-12 20:09:36,107 - __main__ - ERROR - Error getting players for Indianapolis Colts in 2021: list index out of range
+2025-03-12 20:09:36,699 - __main__ - ERROR - Error getting players for Jacksonville Jaguars in 2021: list index out of range
+2025-03-12 20:09:37,299 - __main__ - ERROR - Error getting players for Kansas City Chiefs in 2021: list index out of range
+2025-03-12 20:09:37,925 - __main__ - ERROR - Error getting players for Las Vegas Raiders in 2021: list index out of range
+2025-03-12 20:09:38,519 - __main__ - ERROR - Error getting players for Los Angeles Chargers in 2021: list index out of range
+2025-03-12 20:09:39,122 - __main__ - ERROR - Error getting players for Los Angeles Rams in 2021: list index out of range
+2025-03-12 20:09:39,776 - __main__ - ERROR - Error getting players for Miami Dolphins in 2021: list index out of range
+2025-03-12 20:09:40,351 - __main__ - ERROR - Error getting players for Minnesota Vikings in 2021: list index out of range
+2025-03-12 20:09:40,953 - __main__ - ERROR - Error getting players for New England Patriots in 2021: list index out of range
+2025-03-12 20:09:41,516 - __main__ - ERROR - Error getting players for New Orleans Saints in 2021: list index out of range
+2025-03-12 20:09:42,101 - __main__ - ERROR - Error getting players for New York Giants in 2021: list index out of range
+2025-03-12 20:09:42,698 - __main__ - ERROR - Error getting players for New York Jets in 2021: list index out of range
+2025-03-12 20:09:43,256 - __main__ - ERROR - Error getting players for Philadelphia Eagles in 2021: list index out of range
+2025-03-12 20:09:43,847 - __main__ - ERROR - Error getting players for Pittsburgh Steelers in 2021: list index out of range
+2025-03-12 20:09:44,487 - __main__ - ERROR - Error getting players for San Francisco 49ers in 2021: list index out of range
+2025-03-12 20:09:45,083 - __main__ - ERROR - Error getting players for Seattle Seahawks in 2021: list index out of range
+2025-03-12 20:09:45,665 - __main__ - ERROR - Error getting players for Tampa Bay Buccaneers in 2021: list index out of range
+2025-03-12 20:09:46,241 - __main__ - ERROR - Error getting players for Tennessee Titans in 2021: list index out of range
+2025-03-12 20:09:46,834 - __main__ - ERROR - Error getting players for Washington Commanders in 2021: list index out of range
+2025-03-12 20:09:47,406 - __main__ - ERROR - Error getting players for Arizona Cardinals in 2020: list index out of range
+2025-03-12 20:09:48,010 - __main__ - ERROR - Error getting players for Atlanta Falcons in 2020: list index out of range
+2025-03-12 20:09:48,609 - __main__ - ERROR - Error getting players for Baltimore Ravens in 2020: list index out of range
+2025-03-12 20:09:49,188 - __main__ - ERROR - Error getting players for Buffalo Bills in 2020: list index out of range
+2025-03-12 20:09:49,766 - __main__ - ERROR - Error getting players for Carolina Panthers in 2020: list index out of range
+2025-03-12 20:09:50,325 - __main__ - ERROR - Error getting players for Chicago Bears in 2020: list index out of range
+2025-03-12 20:09:50,888 - __main__ - ERROR - Error getting players for Cincinnati Bengals in 2020: list index out of range
+2025-03-12 20:09:51,446 - __main__ - ERROR - Error getting players for Cleveland Browns in 2020: list index out of range
+2025-03-12 20:09:52,003 - __main__ - ERROR - Error getting players for Dallas Cowboys in 2020: list index out of range
+2025-03-12 20:09:52,576 - __main__ - ERROR - Error getting players for Denver Broncos in 2020: list index out of range
+2025-03-12 20:09:53,166 - __main__ - ERROR - Error getting players for Detroit Lions in 2020: list index out of range
+2025-03-12 20:09:53,743 - __main__ - ERROR - Error getting players for Green Bay Packers in 2020: list index out of range
+2025-03-12 20:09:54,328 - __main__ - ERROR - Error getting players for Houston Texans in 2020: list index out of range
+2025-03-12 20:09:54,885 - __main__ - ERROR - Error getting players for Indianapolis Colts in 2020: list index out of range
+2025-03-12 20:09:55,444 - __main__ - ERROR - Error getting players for Jacksonville Jaguars in 2020: list index out of range
+2025-03-12 20:09:56,010 - __main__ - ERROR - Error getting players for Kansas City Chiefs in 2020: list index out of range
+2025-03-12 20:09:56,672 - __main__ - ERROR - Error getting players for Las Vegas Raiders in 2020: list index out of range
+2025-03-12 20:09:57,292 - __main__ - ERROR - Error getting players for Los Angeles Chargers in 2020: list index out of range
+2025-03-12 20:09:58,013 - __main__ - ERROR - Error getting players for Los Angeles Rams in 2020: list index out of range
+2025-03-12 20:09:58,571 - __main__ - ERROR - Error getting players for Miami Dolphins in 2020: list index out of range
+2025-03-12 20:09:59,131 - __main__ - ERROR - Error getting players for Minnesota Vikings in 2020: list index out of range
+2025-03-12 20:09:59,691 - __main__ - ERROR - Error getting players for New England Patriots in 2020: list index out of range
+2025-03-12 20:10:00,279 - __main__ - ERROR - Error getting players for New Orleans Saints in 2020: list index out of range
+2025-03-12 20:10:00,856 - __main__ - ERROR - Error getting players for New York Giants in 2020: list index out of range
+2025-03-12 20:10:01,428 - __main__ - ERROR - Error getting players for New York Jets in 2020: list index out of range
+2025-03-12 20:10:01,988 - __main__ - ERROR - Error getting players for Philadelphia Eagles in 2020: list index out of range
+2025-03-12 20:10:02,540 - __main__ - ERROR - Error getting players for Pittsburgh Steelers in 2020: list index out of range
+2025-03-12 20:10:03,094 - __main__ - ERROR - Error getting players for San Francisco 49ers in 2020: list index out of range
+2025-03-12 20:10:03,645 - __main__ - ERROR - Error getting players for Seattle Seahawks in 2020: list index out of range
+2025-03-12 20:10:04,203 - __main__ - ERROR - Error getting players for Tampa Bay Buccaneers in 2020: list index out of range
+2025-03-12 20:10:04,826 - __main__ - ERROR - Error getting players for Tennessee Titans in 2020: list index out of range
+2025-03-12 20:10:05,425 - __main__ - ERROR - Error getting players for Washington Commanders in 2020: list index out of range
+2025-03-12 20:10:06,038 - __main__ - ERROR - Error getting players for Arizona Cardinals in 2019: list index out of range
+2025-03-12 20:10:06,594 - __main__ - ERROR - Error getting players for Atlanta Falcons in 2019: list index out of range
+2025-03-12 20:10:07,184 - __main__ - ERROR - Error getting players for Baltimore Ravens in 2019: list index out of range
+2025-03-12 20:10:07,752 - __main__ - ERROR - Error getting players for Buffalo Bills in 2019: list index out of range
+2025-03-12 20:10:08,327 - __main__ - ERROR - Error getting players for Carolina Panthers in 2019: list index out of range
+2025-03-12 20:10:08,884 - __main__ - ERROR - Error getting players for Chicago Bears in 2019: list index out of range
+2025-03-12 20:10:09,481 - __main__ - ERROR - Error getting players for Cincinnati Bengals in 2019: list index out of range
+2025-03-12 20:10:10,031 - __main__ - ERROR - Error getting players for Cleveland Browns in 2019: list index out of range
+2025-03-12 20:10:10,600 - __main__ - ERROR - Error getting players for Dallas Cowboys in 2019: list index out of range
+2025-03-12 20:10:11,185 - __main__ - ERROR - Error getting players for Denver Broncos in 2019: list index out of range
+2025-03-12 20:10:11,735 - __main__ - ERROR - Error getting players for Detroit Lions in 2019: list index out of range
+2025-03-12 20:10:12,322 - __main__ - ERROR - Error getting players for Green Bay Packers in 2019: list index out of range
+2025-03-12 20:10:12,934 - __main__ - ERROR - Error getting players for Houston Texans in 2019: list index out of range
+2025-03-12 20:10:13,497 - __main__ - ERROR - Error getting players for Indianapolis Colts in 2019: list index out of range
+2025-03-12 20:10:14,284 - __main__ - INFO - Found 0 players for Jacksonville Jaguars in 2019
+2025-03-12 20:10:15,126 - __main__ - INFO - Found 0 players for Kansas City Chiefs in 2019
+2025-03-12 20:10:16,367 - __main__ - INFO - Found 0 players for Las Vegas Raiders in 2019
+2025-03-12 20:10:17,096 - __main__ - INFO - Found 0 players for Los Angeles Chargers in 2019
+2025-03-12 20:10:17,855 - __main__ - INFO - Found 0 players for Los Angeles Rams in 2019
+2025-03-12 20:10:18,696 - __main__ - INFO - Found 0 players for Miami Dolphins in 2019
+2025-03-12 20:10:19,492 - __main__ - INFO - Found 0 players for Minnesota Vikings in 2019
+2025-03-12 20:10:20,314 - __main__ - INFO - Found 0 players for New England Patriots in 2019
+2025-03-12 20:10:21,128 - __main__ - INFO - Found 0 players for New Orleans Saints in 2019
+2025-03-12 20:10:21,925 - __main__ - INFO - Found 0 players for New York Giants in 2019
+2025-03-12 20:10:22,890 - __main__ - INFO - Found 0 players for New York Jets in 2019
+2025-03-12 20:10:23,729 - __main__ - INFO - Found 0 players for Philadelphia Eagles in 2019
+2025-03-12 20:10:24,589 - __main__ - INFO - Found 0 players for Pittsburgh Steelers in 2019
+2025-03-12 20:10:25,398 - __main__ - INFO - Found 0 players for San Francisco 49ers in 2019
+2025-03-12 20:10:26,193 - __main__ - INFO - Found 0 players for Seattle Seahawks in 2019
+2025-03-12 20:10:26,948 - __main__ - INFO - Found 0 players for Tampa Bay Buccaneers in 2019
+2025-03-12 20:10:27,786 - __main__ - INFO - Found 0 players for Tennessee Titans in 2019
+2025-03-12 20:10:28,605 - __main__ - INFO - Found 0 players for Washington Commanders in 2019
+2025-03-12 20:10:29,558 - __main__ - WARNING - Error processing Patrick Mahomes in 2023: 'NoneType' object has no attribute 'text'
+2025-03-12 20:10:31,893 - __main__ - WARNING - Error processing Josh Allen in 2023: 'NoneType' object has no attribute 'text'
+2025-03-12 20:10:34,814 - __main__ - WARNING - Error processing Joe Burrow in 2023: 'NoneType' object has no attribute 'text'
+2025-03-12 20:10:37,176 - __main__ - WARNING - Error processing Aaron Rodgers in 2023: 'NoneType' object has no attribute 'text'
+2025-03-12 20:10:39,367 - __main__ - WARNING - Error processing Tom Brady in 2023: Cannot find a QB named Tom Brady from 2023
+2025-03-12 20:10:41,972 - __main__ - WARNING - Error processing Patrick Mahomes in 2022: 'NoneType' object has no attribute 'text'
+2025-03-12 20:10:44,167 - __main__ - WARNING - Error processing Josh Allen in 2022: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:10:46,235 - __main__ - WARNING - Error processing Joe Burrow in 2022: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:10:48,365 - __main__ - WARNING - Error processing Aaron Rodgers in 2022: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:10:50,450 - __main__ - WARNING - Error processing Tom Brady in 2022: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:10:52,521 - __main__ - WARNING - Error processing Patrick Mahomes in 2021: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:10:54,583 - __main__ - WARNING - Error processing Josh Allen in 2021: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:10:56,793 - __main__ - WARNING - Error processing Joe Burrow in 2021: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:10:58,852 - __main__ - WARNING - Error processing Aaron Rodgers in 2021: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:00,927 - __main__ - WARNING - Error processing Tom Brady in 2021: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:03,005 - __main__ - WARNING - Error processing Patrick Mahomes in 2020: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:05,125 - __main__ - WARNING - Error processing Josh Allen in 2020: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:07,218 - __main__ - WARNING - Error processing Joe Burrow in 2020: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:09,321 - __main__ - WARNING - Error processing Aaron Rodgers in 2020: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:11,405 - __main__ - WARNING - Error processing Tom Brady in 2020: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:13,499 - __main__ - WARNING - Error processing Patrick Mahomes in 2019: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:15,609 - __main__ - WARNING - Error processing Josh Allen in 2019: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:17,694 - __main__ - WARNING - Error processing Joe Burrow in 2019: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:19,819 - __main__ - WARNING - Error processing Aaron Rodgers in 2019: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:21,895 - __main__ - WARNING - Error processing Tom Brady in 2019: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:23,968 - __main__ - WARNING - Error processing Patrick Mahomes in 2018: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:26,050 - __main__ - WARNING - Error processing Josh Allen in 2018: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:28,131 - __main__ - WARNING - Error processing Joe Burrow in 2018: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:30,241 - __main__ - WARNING - Error processing Aaron Rodgers in 2018: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:32,334 - __main__ - WARNING - Error processing Tom Brady in 2018: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:34,431 - __main__ - WARNING - Error processing Patrick Mahomes in 2017: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:36,514 - __main__ - WARNING - Error processing Josh Allen in 2017: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:38,642 - __main__ - WARNING - Error processing Joe Burrow in 2017: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:40,726 - __main__ - WARNING - Error processing Aaron Rodgers in 2017: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:42,801 - __main__ - WARNING - Error processing Tom Brady in 2017: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:44,809 - __main__ - INFO - Found 0 total QB players
+2025-03-12 20:11:44,924 - __main__ - WARNING - Error processing Christian McCaffrey in 2023: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:47,002 - __main__ - WARNING - Error processing Derrick Henry in 2023: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:49,095 - __main__ - WARNING - Error processing Jonathan Taylor in 2023: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:51,204 - __main__ - WARNING - Error processing Saquon Barkley in 2023: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:53,313 - __main__ - WARNING - Error processing Christian McCaffrey in 2022: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:55,397 - __main__ - WARNING - Error processing Derrick Henry in 2022: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:57,479 - __main__ - WARNING - Error processing Jonathan Taylor in 2022: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:11:59,556 - __main__ - WARNING - Error processing Saquon Barkley in 2022: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:01,664 - __main__ - WARNING - Error processing Christian McCaffrey in 2021: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:03,729 - __main__ - WARNING - Error processing Derrick Henry in 2021: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:05,801 - __main__ - WARNING - Error processing Jonathan Taylor in 2021: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:07,880 - __main__ - WARNING - Error processing Saquon Barkley in 2021: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:09,978 - __main__ - WARNING - Error processing Christian McCaffrey in 2020: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:12,067 - __main__ - WARNING - Error processing Derrick Henry in 2020: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:14,160 - __main__ - WARNING - Error processing Jonathan Taylor in 2020: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:16,236 - __main__ - WARNING - Error processing Saquon Barkley in 2020: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:18,335 - __main__ - WARNING - Error processing Christian McCaffrey in 2019: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:20,398 - __main__ - WARNING - Error processing Derrick Henry in 2019: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:22,504 - __main__ - WARNING - Error processing Jonathan Taylor in 2019: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:24,573 - __main__ - WARNING - Error processing Saquon Barkley in 2019: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:26,657 - __main__ - WARNING - Error processing Christian McCaffrey in 2018: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:28,746 - __main__ - WARNING - Error processing Derrick Henry in 2018: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:30,856 - __main__ - WARNING - Error processing Jonathan Taylor in 2018: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:32,957 - __main__ - WARNING - Error processing Saquon Barkley in 2018: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:35,020 - __main__ - WARNING - Error processing Christian McCaffrey in 2017: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:37,191 - __main__ - WARNING - Error processing Derrick Henry in 2017: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:39,276 - __main__ - WARNING - Error processing Jonathan Taylor in 2017: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:41,405 - __main__ - WARNING - Error processing Saquon Barkley in 2017: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:43,412 - __main__ - INFO - Found 0 total RB players
+2025-03-12 20:12:43,541 - __main__ - WARNING - Error processing Justin Jefferson in 2023: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:45,678 - __main__ - WARNING - Error processing Tyreek Hill in 2023: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:47,768 - __main__ - WARNING - Error processing Davante Adams in 2023: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:49,967 - __main__ - WARNING - Error processing Cooper Kupp in 2023: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:52,065 - __main__ - WARNING - Error processing Justin Jefferson in 2022: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:54,177 - __main__ - WARNING - Error processing Tyreek Hill in 2022: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:56,241 - __main__ - WARNING - Error processing Davante Adams in 2022: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:12:58,333 - __main__ - WARNING - Error processing Cooper Kupp in 2022: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:00,401 - __main__ - WARNING - Error processing Justin Jefferson in 2021: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:02,554 - __main__ - WARNING - Error processing Tyreek Hill in 2021: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:04,658 - __main__ - WARNING - Error processing Davante Adams in 2021: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:06,771 - __main__ - WARNING - Error processing Cooper Kupp in 2021: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:08,912 - __main__ - WARNING - Error processing Justin Jefferson in 2020: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:11,050 - __main__ - WARNING - Error processing Tyreek Hill in 2020: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:13,159 - __main__ - WARNING - Error processing Davante Adams in 2020: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:15,220 - __main__ - WARNING - Error processing Cooper Kupp in 2020: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:17,307 - __main__ - WARNING - Error processing Justin Jefferson in 2019: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:19,409 - __main__ - WARNING - Error processing Tyreek Hill in 2019: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:21,503 - __main__ - WARNING - Error processing Davante Adams in 2019: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:23,599 - __main__ - WARNING - Error processing Cooper Kupp in 2019: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:25,686 - __main__ - WARNING - Error processing Justin Jefferson in 2018: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:27,801 - __main__ - WARNING - Error processing Tyreek Hill in 2018: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:29,891 - __main__ - WARNING - Error processing Davante Adams in 2018: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:31,982 - __main__ - WARNING - Error processing Cooper Kupp in 2018: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:34,069 - __main__ - WARNING - Error processing Justin Jefferson in 2017: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:36,153 - __main__ - WARNING - Error processing Tyreek Hill in 2017: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:38,211 - __main__ - WARNING - Error processing Davante Adams in 2017: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:40,257 - __main__ - WARNING - Error processing Cooper Kupp in 2017: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:42,263 - __main__ - INFO - Found 0 total WR players
+2025-03-12 20:13:42,322 - __main__ - WARNING - Error processing Travis Kelce in 2023: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:44,414 - __main__ - WARNING - Error processing George Kittle in 2023: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:46,516 - __main__ - WARNING - Error processing Mark Andrews in 2023: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:48,610 - __main__ - WARNING - Error processing T.J. Hockenson in 2023: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:50,700 - __main__ - WARNING - Error processing Travis Kelce in 2022: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:52,760 - __main__ - WARNING - Error processing George Kittle in 2022: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:54,826 - __main__ - WARNING - Error processing Mark Andrews in 2022: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:56,903 - __main__ - WARNING - Error processing T.J. Hockenson in 2022: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:13:58,998 - __main__ - WARNING - Error processing Travis Kelce in 2021: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:14:01,076 - __main__ - WARNING - Error processing George Kittle in 2021: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:14:03,162 - __main__ - WARNING - Error processing Mark Andrews in 2021: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:14:05,248 - __main__ - WARNING - Error processing T.J. Hockenson in 2021: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:14:07,337 - __main__ - WARNING - Error processing Travis Kelce in 2020: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:14:09,421 - __main__ - WARNING - Error processing George Kittle in 2020: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:14:11,518 - __main__ - WARNING - Error processing Mark Andrews in 2020: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:14:13,630 - __main__ - WARNING - Error processing T.J. Hockenson in 2020: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:14:15,733 - __main__ - WARNING - Error processing Travis Kelce in 2019: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:14:17,869 - __main__ - WARNING - Error processing George Kittle in 2019: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:14:20,079 - __main__ - WARNING - Error processing Mark Andrews in 2019: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:14:22,154 - __main__ - WARNING - Error processing T.J. Hockenson in 2019: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:14:24,235 - __main__ - WARNING - Error processing Travis Kelce in 2018: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:14:26,314 - __main__ - WARNING - Error processing George Kittle in 2018: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:14:28,424 - __main__ - WARNING - Error processing Mark Andrews in 2018: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:14:30,507 - __main__ - WARNING - Error processing T.J. Hockenson in 2018: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:14:32,598 - __main__ - WARNING - Error processing Travis Kelce in 2017: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:14:34,734 - __main__ - WARNING - Error processing George Kittle in 2017: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:14:36,865 - __main__ - WARNING - Error processing Mark Andrews in 2017: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:14:38,998 - __main__ - WARNING - Error processing T.J. Hockenson in 2017: 'NoneType' object has no attribute 'find_all'
+2025-03-12 20:14:41,003 - __main__ - INFO - Found 0 total TE players
+2025-03-12 20:14:41,017 - __main__ - INFO - Added 0 new players during merge
+2025-03-12 20:14:41,017 - __main__ - INFO - Enhanced 0 existing player records
+2025-03-12 20:14:41,025 - __main__ - INFO - Added 0 new players during merge
+2025-03-12 20:14:41,025 - __main__ - INFO - Enhanced 0 existing player records
+2025-03-12 20:14:41,032 - __main__ - INFO - Added manual player: Sam LaPorta
+2025-03-12 20:14:41,033 - __main__ - INFO - Added 1 manual players
+2025-03-12 20:14:41,055 - __main__ - INFO - Added 0 rookie players

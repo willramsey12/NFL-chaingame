@@ -1,0 +1,173 @@
+2025-03-12 19:08:14,955 - __main__ - INFO - Starting comprehensive NFL player database refresh
+2025-03-12 19:08:14,956 - __main__ - INFO - Created backup of current database at: data/backups/nfl_players_backup_20250312_190814.json
+2025-03-12 19:08:14,960 - __main__ - INFO - Loaded 9497 existing players
+2025-03-12 19:08:14,963 - __main__ - INFO - Added Hall of Fame player: Marshall Faulk
+2025-03-12 19:08:14,963 - __main__ - INFO - Added Hall of Fame player: Mike Sainristil
+2025-03-12 19:08:14,963 - __main__ - INFO - Added Hall of Fame player: Bruce Smith
+2025-03-12 19:08:14,963 - __main__ - INFO - Added Hall of Fame player: Eric Dickerson
+2025-03-12 19:08:14,963 - __main__ - INFO - Added Hall of Fame player: Alan Page
+2025-03-12 19:08:14,963 - __main__ - INFO - Added Hall of Fame player: Jerry Kramer
+2025-03-12 19:08:14,963 - __main__ - INFO - Added Hall of Fame player: Gale Sayers
+2025-03-12 19:08:14,963 - __main__ - INFO - Added Hall of Fame player: Franco Harris
+2025-03-12 19:08:14,963 - __main__ - INFO - Added 8 Hall of Fame players
+2025-03-12 19:08:14,965 - __main__ - INFO - Added 0 previously missing players
+2025-03-12 19:08:14,967 - __main__ - INFO - Added rookie player: Joe Alt
+2025-03-12 19:08:14,967 - __main__ - INFO - Added rookie player: Rome Odunze
+2025-03-12 19:08:14,967 - __main__ - INFO - Added rookie player: Michael Penix
+2025-03-12 19:08:14,967 - __main__ - INFO - Added rookie player: Laiatu Latu
+2025-03-12 19:08:14,967 - __main__ - INFO - Added rookie player: Taliese Fuaga
+2025-03-12 19:08:14,967 - __main__ - INFO - Added rookie player: Quinyon Mitchell
+2025-03-12 19:08:14,967 - __main__ - INFO - Added rookie player: Terrion Arnold
+2025-03-12 19:08:14,967 - __main__ - INFO - Added rookie player: Olu Fashanu
+2025-03-12 19:08:14,967 - __main__ - INFO - Added 8 rookie players
+2025-03-12 19:08:15,002 - __main__ - INFO - Saved 9513 players to current database
+2025-03-12 19:08:49,721 - __main__ - INFO - Scraping players with last names starting with: A
+2025-03-12 19:08:49,919 - __main__ - INFO - Found 0 players for letter A
+2025-03-12 19:08:49,919 - __main__ - INFO - Completed letter A - Total players so far: 0
+2025-03-12 19:08:53,236 - __main__ - INFO - Scraping players with last names starting with: B
+2025-03-12 19:08:53,476 - __main__ - INFO - Found 0 players for letter B
+2025-03-12 19:08:53,476 - __main__ - INFO - Completed letter B - Total players so far: 0
+2025-03-12 19:08:57,093 - __main__ - INFO - Scraping players with last names starting with: C
+2025-03-12 19:08:57,300 - __main__ - INFO - Found 0 players for letter C
+2025-03-12 19:08:57,300 - __main__ - INFO - Completed letter C - Total players so far: 0
+2025-03-12 19:08:59,880 - __main__ - INFO - Scraping players with last names starting with: D
+2025-03-12 19:09:00,036 - __main__ - INFO - Found 0 players for letter D
+2025-03-12 19:09:00,036 - __main__ - INFO - Completed letter D - Total players so far: 0
+2025-03-12 19:09:02,956 - __main__ - INFO - Scraping players with last names starting with: E
+2025-03-12 19:09:03,077 - __main__ - INFO - Found 0 players for letter E
+2025-03-12 19:09:03,077 - __main__ - INFO - Completed letter E - Total players so far: 0
+2025-03-12 19:09:05,352 - __main__ - INFO - Scraping players with last names starting with: F
+2025-03-12 19:09:05,513 - __main__ - INFO - Found 0 players for letter F
+2025-03-12 19:09:05,513 - __main__ - INFO - Completed letter F - Total players so far: 0
+2025-03-12 19:09:08,527 - __main__ - INFO - Scraping players with last names starting with: G
+2025-03-12 19:09:08,693 - __main__ - INFO - Found 0 players for letter G
+2025-03-12 19:09:08,693 - __main__ - INFO - Completed letter G - Total players so far: 0
+2025-03-12 19:09:12,608 - __main__ - INFO - Scraping players with last names starting with: H
+2025-03-12 19:09:12,898 - __main__ - INFO - Found 0 players for letter H
+2025-03-12 19:09:12,899 - __main__ - INFO - Completed letter H - Total players so far: 0
+2025-03-12 19:09:16,377 - __main__ - INFO - Scraping players with last names starting with: I
+2025-03-12 19:09:16,506 - __main__ - INFO - Found 0 players for letter I
+2025-03-12 19:09:16,506 - __main__ - INFO - Completed letter I - Total players so far: 0
+2025-03-12 19:09:18,714 - __main__ - INFO - Scraping players with last names starting with: J
+2025-03-12 19:09:18,935 - __main__ - INFO - Found 0 players for letter J
+2025-03-12 19:09:18,935 - __main__ - INFO - Completed letter J - Total players so far: 0
+2025-03-12 19:09:22,851 - __main__ - INFO - Scraping players with last names starting with: K
+2025-03-12 19:09:22,989 - __main__ - INFO - Found 0 players for letter K
+2025-03-12 19:09:22,990 - __main__ - INFO - Completed letter K - Total players so far: 0
+2025-03-12 19:09:25,110 - __main__ - INFO - Scraping players with last names starting with: L
+2025-03-12 19:09:25,375 - __main__ - INFO - Found 0 players for letter L
+2025-03-12 19:09:25,376 - __main__ - INFO - Completed letter L - Total players so far: 0
+2025-03-12 19:09:29,065 - __main__ - INFO - Scraping players with last names starting with: M
+2025-03-12 19:09:29,331 - __main__ - INFO - Found 0 players for letter M
+2025-03-12 19:09:29,331 - __main__ - INFO - Completed letter M - Total players so far: 0
+2025-03-12 19:09:32,933 - __main__ - INFO - Scraping players with last names starting with: N
+2025-03-12 19:09:33,039 - __main__ - INFO - Found 0 players for letter N
+2025-03-12 19:09:33,039 - __main__ - INFO - Completed letter N - Total players so far: 0
+2025-03-12 19:09:35,952 - __main__ - INFO - Scraping players with last names starting with: O
+2025-03-12 19:09:36,072 - __main__ - INFO - Found 0 players for letter O
+2025-03-12 19:09:36,073 - __main__ - INFO - Completed letter O - Total players so far: 0
+2025-03-12 19:09:39,856 - __main__ - INFO - Scraping players with last names starting with: P
+2025-03-12 19:09:40,033 - __main__ - INFO - Found 0 players for letter P
+2025-03-12 19:09:40,034 - __main__ - INFO - Completed letter P - Total players so far: 0
+2025-03-12 19:09:43,916 - __main__ - INFO - Scraping players with last names starting with: Q
+2025-03-12 19:09:44,017 - __main__ - INFO - Found 0 players for letter Q
+2025-03-12 19:09:44,017 - __main__ - INFO - Completed letter Q - Total players so far: 0
+2025-03-12 19:09:47,155 - __main__ - INFO - Scraping players with last names starting with: R
+2025-03-12 19:09:47,428 - __main__ - INFO - Found 0 players for letter R
+2025-03-12 19:09:47,429 - __main__ - INFO - Completed letter R - Total players so far: 0
+2025-03-12 19:09:50,740 - __main__ - INFO - Scraping players with last names starting with: S
+2025-03-12 19:09:50,969 - __main__ - INFO - Found 0 players for letter S
+2025-03-12 19:09:50,969 - __main__ - INFO - Completed letter S - Total players so far: 0
+2025-03-12 19:09:52,993 - __main__ - INFO - Scraping players with last names starting with: T
+2025-03-12 19:09:53,158 - __main__ - INFO - Found 0 players for letter T
+2025-03-12 19:09:53,159 - __main__ - INFO - Completed letter T - Total players so far: 0
+2025-03-12 19:09:55,190 - __main__ - INFO - Scraping players with last names starting with: U
+2025-03-12 19:09:55,285 - __main__ - INFO - Found 0 players for letter U
+2025-03-12 19:09:55,286 - __main__ - INFO - Completed letter U - Total players so far: 0
+2025-03-12 19:09:57,401 - __main__ - INFO - Scraping players with last names starting with: V
+2025-03-12 19:09:57,488 - __main__ - INFO - Found 0 players for letter V
+2025-03-12 19:09:57,488 - __main__ - INFO - Completed letter V - Total players so far: 0
+2025-03-12 19:09:59,732 - __main__ - INFO - Scraping players with last names starting with: W
+2025-03-12 19:10:00,007 - __main__ - INFO - Found 0 players for letter W
+2025-03-12 19:10:00,007 - __main__ - INFO - Completed letter W - Total players so far: 0
+2025-03-12 19:10:02,395 - __main__ - INFO - Scraping players with last names starting with: X
+2025-03-12 19:10:02,579 - __main__ - INFO - Found 0 players for letter X
+2025-03-12 19:10:02,580 - __main__ - INFO - Completed letter X - Total players so far: 0
+2025-03-12 19:10:04,926 - __main__ - INFO - Scraping players with last names starting with: Y
+2025-03-12 19:10:05,015 - __main__ - INFO - Found 0 players for letter Y
+2025-03-12 19:10:05,015 - __main__ - INFO - Completed letter Y - Total players so far: 0
+2025-03-12 19:10:08,939 - __main__ - INFO - Scraping players with last names starting with: Z
+2025-03-12 19:10:09,055 - __main__ - INFO - Found 0 players for letter Z
+2025-03-12 19:10:09,055 - __main__ - INFO - Completed letter Z - Total players so far: 0
+2025-03-12 19:10:12,590 - __main__ - INFO - Total historical players scraped: 0
+2025-03-12 19:10:12,594 - __main__ - INFO - Saved 0 historical players
+2025-03-12 19:10:12,594 - __main__ - INFO - Scraping roster for team: crd
+2025-03-12 19:10:12,945 - __main__ - WARNING - No roster table found for team: crd
+2025-03-12 19:10:12,945 - __main__ - INFO - Scraping roster for team: atl
+2025-03-12 19:10:13,211 - __main__ - WARNING - No roster table found for team: atl
+2025-03-12 19:10:13,211 - __main__ - INFO - Scraping roster for team: rav
+2025-03-12 19:10:13,518 - __main__ - WARNING - No roster table found for team: rav
+2025-03-12 19:10:13,519 - __main__ - INFO - Scraping roster for team: buf
+2025-03-12 19:10:13,801 - __main__ - WARNING - No roster table found for team: buf
+2025-03-12 19:10:13,801 - __main__ - INFO - Scraping roster for team: car
+2025-03-12 19:10:14,156 - __main__ - WARNING - No roster table found for team: car
+2025-03-12 19:10:14,156 - __main__ - INFO - Scraping roster for team: chi
+2025-03-12 19:10:14,501 - __main__ - WARNING - No roster table found for team: chi
+2025-03-12 19:10:14,501 - __main__ - INFO - Scraping roster for team: cin
+2025-03-12 19:10:14,600 - __main__ - ERROR - Error scraping team cin: 429 Client Error: Too Many Requests for url: https://www.pro-football-reference.com/teams/cin
+2025-03-12 19:10:19,603 - __main__ - INFO - Scraping roster for team: cle
+2025-03-12 19:10:19,766 - __main__ - ERROR - Error scraping team cle: 429 Client Error: Too Many Requests for url: https://www.pro-football-reference.com/teams/cle
+2025-03-12 19:10:24,771 - __main__ - INFO - Scraping roster for team: dal
+2025-03-12 19:10:25,252 - __main__ - ERROR - Error scraping team dal: 429 Client Error: Too Many Requests for url: https://www.pro-football-reference.com/teams/dal
+2025-03-12 19:10:30,255 - __main__ - INFO - Scraping roster for team: den
+2025-03-12 19:10:30,325 - __main__ - ERROR - Error scraping team den: 429 Client Error: Too Many Requests for url: https://www.pro-football-reference.com/teams/den
+2025-03-12 19:10:35,330 - __main__ - INFO - Scraping roster for team: det
+2025-03-12 19:10:35,387 - __main__ - ERROR - Error scraping team det: 429 Client Error: Too Many Requests for url: https://www.pro-football-reference.com/teams/det
+2025-03-12 19:10:40,393 - __main__ - INFO - Scraping roster for team: gnb
+2025-03-12 19:10:40,523 - __main__ - ERROR - Error scraping team gnb: 429 Client Error: Too Many Requests for url: https://www.pro-football-reference.com/teams/gnb
+2025-03-12 19:10:45,528 - __main__ - INFO - Scraping roster for team: htx
+2025-03-12 19:10:45,905 - __main__ - ERROR - Error scraping team htx: 429 Client Error: Too Many Requests for url: https://www.pro-football-reference.com/teams/htx
+2025-03-12 19:10:50,911 - __main__ - INFO - Scraping roster for team: clt
+2025-03-12 19:10:50,986 - __main__ - ERROR - Error scraping team clt: 429 Client Error: Too Many Requests for url: https://www.pro-football-reference.com/teams/clt
+2025-03-12 19:10:55,987 - __main__ - INFO - Scraping roster for team: jax
+2025-03-12 19:10:56,065 - __main__ - ERROR - Error scraping team jax: 429 Client Error: Too Many Requests for url: https://www.pro-football-reference.com/teams/jax
+2025-03-12 19:11:01,070 - __main__ - INFO - Scraping roster for team: kan
+2025-03-12 19:11:01,142 - __main__ - ERROR - Error scraping team kan: 429 Client Error: Too Many Requests for url: https://www.pro-football-reference.com/teams/kan
+2025-03-12 19:11:06,147 - __main__ - INFO - Scraping roster for team: mia
+2025-03-12 19:11:06,211 - __main__ - ERROR - Error scraping team mia: 429 Client Error: Too Many Requests for url: https://www.pro-football-reference.com/teams/mia
+2025-03-12 19:11:11,216 - __main__ - INFO - Scraping roster for team: min
+2025-03-12 19:11:11,288 - __main__ - ERROR - Error scraping team min: 429 Client Error: Too Many Requests for url: https://www.pro-football-reference.com/teams/min
+2025-03-12 19:11:16,293 - __main__ - INFO - Scraping roster for team: nwe
+2025-03-12 19:11:16,367 - __main__ - ERROR - Error scraping team nwe: 429 Client Error: Too Many Requests for url: https://www.pro-football-reference.com/teams/nwe
+2025-03-12 19:11:21,370 - __main__ - INFO - Scraping roster for team: nor
+2025-03-12 19:11:21,459 - __main__ - ERROR - Error scraping team nor: 429 Client Error: Too Many Requests for url: https://www.pro-football-reference.com/teams/nor
+2025-03-12 19:11:26,465 - __main__ - INFO - Scraping roster for team: nyg
+2025-03-12 19:11:26,533 - __main__ - ERROR - Error scraping team nyg: 429 Client Error: Too Many Requests for url: https://www.pro-football-reference.com/teams/nyg
+2025-03-12 19:11:31,538 - __main__ - INFO - Scraping roster for team: nyj
+2025-03-12 19:11:31,617 - __main__ - ERROR - Error scraping team nyj: 429 Client Error: Too Many Requests for url: https://www.pro-football-reference.com/teams/nyj
+2025-03-12 19:11:36,624 - __main__ - INFO - Scraping roster for team: rai
+2025-03-12 19:11:36,690 - __main__ - ERROR - Error scraping team rai: 429 Client Error: Too Many Requests for url: https://www.pro-football-reference.com/teams/rai
+2025-03-12 19:11:41,692 - __main__ - INFO - Scraping roster for team: phi
+2025-03-12 19:11:41,771 - __main__ - ERROR - Error scraping team phi: 429 Client Error: Too Many Requests for url: https://www.pro-football-reference.com/teams/phi
+2025-03-12 19:11:46,777 - __main__ - INFO - Scraping roster for team: pit
+2025-03-12 19:11:46,880 - __main__ - ERROR - Error scraping team pit: 429 Client Error: Too Many Requests for url: https://www.pro-football-reference.com/teams/pit
+2025-03-12 19:11:51,883 - __main__ - INFO - Scraping roster for team: sdg
+2025-03-12 19:11:51,960 - __main__ - ERROR - Error scraping team sdg: 429 Client Error: Too Many Requests for url: https://www.pro-football-reference.com/teams/sdg
+2025-03-12 19:11:56,965 - __main__ - INFO - Scraping roster for team: sfo
+2025-03-12 19:11:57,036 - __main__ - ERROR - Error scraping team sfo: 429 Client Error: Too Many Requests for url: https://www.pro-football-reference.com/teams/sfo
+2025-03-12 19:12:02,042 - __main__ - INFO - Scraping roster for team: sea
+2025-03-12 19:12:02,122 - __main__ - ERROR - Error scraping team sea: 429 Client Error: Too Many Requests for url: https://www.pro-football-reference.com/teams/sea
+2025-03-12 19:12:07,126 - __main__ - INFO - Scraping roster for team: ram
+2025-03-12 19:12:07,221 - __main__ - ERROR - Error scraping team ram: 429 Client Error: Too Many Requests for url: https://www.pro-football-reference.com/teams/ram
+2025-03-12 19:12:12,222 - __main__ - INFO - Scraping roster for team: tam
+2025-03-12 19:12:12,289 - __main__ - ERROR - Error scraping team tam: 429 Client Error: Too Many Requests for url: https://www.pro-football-reference.com/teams/tam
+2025-03-12 19:12:17,294 - __main__ - INFO - Scraping roster for team: was
+2025-03-12 19:12:17,374 - __main__ - ERROR - Error scraping team was: 429 Client Error: Too Many Requests for url: https://www.pro-football-reference.com/teams/was
+2025-03-12 19:12:22,379 - __main__ - INFO - Total current players scraped from team rosters: 0
+2025-03-12 19:12:22,404 - __main__ - INFO - Added 0 new players during merge
+2025-03-12 19:12:22,405 - __main__ - INFO - Enhanced 0 existing player records
+2025-03-12 19:12:22,408 - __main__ - INFO - Added 0 new players during merge
+2025-03-12 19:12:22,409 - __main__ - INFO - Enhanced 0 existing player records
+2025-03-12 19:12:22,451 - __main__ - INFO - Saved complete database with 9513 players
+2025-03-12 19:12:28,265 - __main__ - INFO - Replaced current database with complete database
+2025-03-12 19:12:28,265 - __main__ - INFO - Comprehensive NFL player database refresh completed
