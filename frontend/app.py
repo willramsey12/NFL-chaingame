@@ -1,9 +1,15 @@
 import sys
 import os
 import logging
+from dotenv import load_dotenv
+
+# Load environment variables from .env file if present
+load_dotenv()
 
 # Configure logging
-logging.basicConfig(level=logging.DEBUG)
+logging_level = os.environ.get('LOGGING_LEVEL', 'DEBUG')
+numeric_level = getattr(logging, logging_level.upper(), logging.DEBUG)
+logging.basicConfig(level=numeric_level)
 logger = logging.getLogger(__name__)
 
 # Add the parent directory to the path so we can import the backend module
@@ -13,7 +19,8 @@ from flask import Flask, render_template, request, jsonify, session
 from backend.game import NFLGame
 
 app = Flask(__name__)
-app.secret_key = 'nfl_game_secret_key'  # For session management
+# Use environment variable for secret key in production
+app.secret_key = os.environ.get('SECRET_KEY', 'nfl_game_secret_key')  # For session management
 
 # Create a global game instance that persists between requests
 # This avoids having to serialize/deserialize the entire players database
@@ -101,38 +108,8 @@ def timer_expired():
         logger.exception(f"Error handling timer expiration: {e}")
         return jsonify({"error": "An error occurred processing the timer expiration."}), 500
 
-@app.route('/check_duplicates', methods=['POST'])
-def check_duplicates():
-    """Check if there are multiple players with the same name."""
-    data = request.json
-    player_name = data.get('player_name', '')
-    
-    if not player_name:
-        return jsonify({"error": "No player name provided"}), 400
-    
-    # Parse the name into first and last
-    name_parts = player_name.split()
-    if len(name_parts) < 2:
-        return jsonify({"error": "Invalid player name format"}), 400
-    
-    first_name = name_parts[0].lower()
-    last_name = name_parts[1].lower()
-    
-    # Get the game instance to access the players list
-    session_id = session.get('session_id')
-    if not session_id or session_id not in GAME_INSTANCES:
-        return jsonify({"has_duplicates": False}), 200
-    
-    game = GAME_INSTANCES[session_id]
-    
-    # Count players with the same name
-    count = 0
-    for player in game.players:
-        if (player.get('firstName', '').lower() == first_name and 
-            player.get('lastName', '').lower() == last_name):
-            count += 1
-    
-    return jsonify({"has_duplicates": count > 1}), 200
-
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001, debug=True) 
+    # Use environment variables for production settings
+    debug_mode = os.environ.get('DEBUG', 'True') == 'True'
+    port = int(os.environ.get('PORT', 5001))
+    app.run(host='0.0.0.0', port=port, debug=debug_mode) 

@@ -4,7 +4,9 @@ import os
 import logging
 
 # Configure logging
-logging.basicConfig(level=logging.DEBUG)
+logging_level = os.environ.get('LOGGING_LEVEL', 'DEBUG')
+numeric_level = getattr(logging, logging_level.upper(), logging.DEBUG)
+logging.basicConfig(level=numeric_level)
 logger = logging.getLogger(__name__)
 
 class NFLGame:
@@ -20,7 +22,8 @@ class NFLGame:
     def load_players(self):
         """Load NFL player data from the JSON file."""
         script_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        data_path = os.path.join(script_dir, 'data', 'players.json')
+        data_path = os.environ.get('PLAYER_DATA_PATH', 
+                                   os.path.join(script_dir, 'data', 'players.json'))
         
         try:
             with open(data_path, 'r') as file:
@@ -150,29 +153,13 @@ class NFLGame:
         if self._is_player_used(found_player):
             logger.debug(f"Player has already been used: {found_player['firstName']} {found_player['lastName']}")
             
-            # Check if there are other players with the same name
-            same_name_players = self._find_players_with_same_name(found_player)
-            
-            if len(same_name_players) > 1:
-                # Suggest using team identifier
-                teams = [p.get('team', 'Unknown') for p in same_name_players if p.get('team')]
-                teams_text = ", ".join(teams)
-                
-                return {
-                    "valid": False,
-                    "message": f"This player has already been used. There are other players with the name '{found_player['firstName']} {found_player['lastName']}'. Try adding the team identifier (e.g., {teams_text}).",
-                    "lives": self.lives,
-                    "game_over": self.game_over,
-                    "error_type": "already_used"
-                }
-            else:
-                return {
-                    "valid": False,
-                    "message": "This player has already been used.",
-                    "lives": self.lives,
-                    "game_over": self.game_over,
-                    "error_type": "already_used"
-                }
+            return {
+                "valid": False,
+                "message": "This player has already been used.",
+                "lives": self.lives,
+                "game_over": self.game_over,
+                "error_type": "already_used"
+            }
         
         # Valid answer
         self.current_player = found_player
@@ -428,31 +415,4 @@ class NFLGame:
             "lives": self.lives,
             "game_over": self.game_over,
             "error_type": "timeout"
-        }
-
-
-# Example usage:
-if __name__ == "__main__":
-    game = NFLGame()
-    state = game.start_game()
-    print(f"Game started! Current player: {state['current_player']}")
-    print(f"Next player must start with: {state['next_required_letter']}")
-    
-    while not game.game_over:
-        answer = input("Enter player name (or 'quit' to exit): ")
-        if answer.lower() == 'quit':
-            break
-        
-        result = game.submit_answer(answer)
-        print(result["message"])
-        
-        if not result.get("valid", False):
-            print(f"Lives remaining: {result['lives']}")
-        else:
-            print(f"Next player must start with: {result['next_required_letter']}")
-        
-        if result.get("game_over", False):
-            print("Game Over! You've lost all your lives.")
-            break
-    
-    print(f"You named {len(game.used_players)} NFL players!") 
+        } 

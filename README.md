@@ -1,17 +1,19 @@
-# NFL Player Guessing Game
+# NFL Player Chain
 
-A web-based game where users try to identify NFL players based on clues. This game tests your knowledge of NFL players across different eras, teams, and positions.
+A web-based game where users name NFL players in a chain, with each player's first name starting with the first letter of the previous player's last name. Test your NFL knowledge in this fast-paced name game!
 
 ## Features
 
-- Guess NFL players from a database of thousands of current and historical players
-- Game difficulty scales with your progress
+- Name NFL players in a chain where each player's first name must start with the first letter of the previous player's last name
+- 2-minute timer for each turn adds excitement and challenge
 - Player database includes:
   - Current NFL players
   - Hall of Fame legends
   - Historical players from throughout NFL history
 - Interactive web interface with real-time feedback
 - Robust player name matching to account for variations in spelling or format
+- College information for each player
+- Streak counter and game statistics tracking
 
 ## Project Structure
 
@@ -20,11 +22,9 @@ nfl-game/
 ├── backend/
 │   └── game.py          # Core game logic and player matching
 ├── data/
-│   ├── nfl_players.json            # Main player database
-│   ├── complete_nfl_players.json   # Comprehensive player database
-│   ├── nfl_database_tools.py       # Database management and scraping tools
-│   ├── backups/                    # Database backup directory
-│   └── logs/                       # Logs directory
+│   ├── players.json     # Player database
+│   ├── backups/         # Database backup directory
+│   └── logs/            # Logs directory
 ├── frontend/
 │   ├── app.py           # Flask web application
 │   └── templates/       # HTML templates
@@ -36,8 +36,8 @@ nfl-game/
 
 1. Clone the repository:
 ```
-git clone https://github.com/yourusername/nfl-game.git
-cd nfl-game
+git clone https://github.com/willramsey12/NFL-chaingame.git
+cd NFL-chaingame
 ```
 
 2. Install the required dependencies:
@@ -45,7 +45,7 @@ cd nfl-game
 pip3 install -r requirements.txt
 ```
 
-## Running the Game
+## Running the Game Locally
 
 1. Start the Flask web server:
 ```
@@ -55,34 +55,59 @@ python3 app.py
 
 2. Open your web browser and navigate to:
 ```
-http://127.0.0.1:5000
+http://127.0.0.1:5001
 ```
 
-## Database Management
+## Deployment Options
 
-The game includes a comprehensive database management tool that can be used to:
+### Render.com (Easy for beginners)
 
-- Update the player database with current players
-- Add missing players manually
-- Create backups of the database
-- Perform a comprehensive refresh of all NFL players
+1. Sign up at [render.com](https://render.com)
+2. Create a new Web Service
+3. Connect your GitHub repository
+4. Configure deployment settings:
+   - Build Command: `pip install -r requirements.txt`
+   - Start Command: `gunicorn frontend.app:app`
 
-To use the database management tools:
+### PythonAnywhere (Beginner-friendly)
 
+1. Sign up at [pythonanywhere.com](https://www.pythonanywhere.com/)
+2. Upload your code
+3. Create a new web app and select Flask
+4. Configure WSGI file to point to your app
+
+### Heroku (Developer-focused)
+
+1. Sign up at [heroku.com](https://www.heroku.com)
+2. Install the Heroku CLI
+3. Create a Procfile in your project root:
 ```
-python data/nfl_database_tools.py [command]
+web: gunicorn frontend.app:app
+```
+4. Deploy using Git:
+```
+heroku login
+heroku create nfl-player-chain
+git push heroku main
 ```
 
+## Environment Variables
+
+The application supports the following environment variables:
+
+- `DEBUG`: Set to "True" to enable debug mode (default: "True")
+- `PORT`: The port to run the application on (default: 5001)
+- `PLAYER_DATA_PATH`: Custom path to the player data JSON file
+- `LOGGING_LEVEL`: Set the logging level (default: "DEBUG")
 
 ## Player Name Matching
 
 The game uses a robust player matching system that allows for various ways to match player names:
 
 1. Exact match (case-insensitive)
-2. Matching the first letter of the first name with the exact last name
-3. Fuzzy matching based on the last name
-
-This ensures a better gaming experience even with minor typing errors or variations in player names.
+2. Common nickname matching (e.g., "Mike" for "Michael")
+3. First initial + last name matching
+4. Fuzzy first name matching with exact last name
 
 ## Contributing
 
