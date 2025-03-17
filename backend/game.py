@@ -10,14 +10,17 @@ logging.basicConfig(level=numeric_level)
 logger = logging.getLogger(__name__)
 
 class NFLGame:
-    def __init__(self):
+    def __init__(self, game_mode="solo"):
         self.players = self.load_players()
         logger.info(f"Loaded {len(self.players)} NFL players")
         self.used_players = []
+        self.used_players_details = []  # Store full player details for display
         self.lives = 3
         self.current_player = None
         self.next_required_letter = None
         self.game_over = False
+        self.game_mode = game_mode  # "solo" or "vs_computer"
+        self.turn = "player"  # Whose turn it is: "player" or "computer"
     
     def load_players(self):
         """Load NFL player data from the JSON file."""
@@ -46,15 +49,26 @@ class NFLGame:
                 {"firstName": "Aaron", "lastName": "Donald", "position": "DT", "team": "LAR", "college": "Pittsburgh"}
             ]
     
-    def start_game(self):
+    def start_game(self, game_mode="solo"):
         """Start a new game with a random NFL player."""
+        self.game_mode = game_mode
         self.used_players = []
+        self.used_players_details = []
         self.lives = 3
         self.game_over = False
+        self.turn = "player"
         
         # Select a random player to start
         self.current_player = random.choice(self.players)
         self.used_players.append(self.current_player)
+        
+        # Add to detailed player list
+        self.used_players_details.append({
+            "name": f"{self.current_player['firstName']} {self.current_player['lastName']}",
+            "position": self.current_player['position'],
+            "college": self.current_player.get("college", "Unknown"),
+            "turn": "starting"
+        })
         
         # The next player's first name must start with the first letter of the current player's last name
         self.next_required_letter = self.current_player["lastName"][0].upper()
@@ -64,9 +78,12 @@ class NFLGame:
             "next_required_letter": self.next_required_letter,
             "lives": self.lives,
             "used_players": len(self.used_players),
+            "used_players_details": self.used_players_details,
             "game_over": self.game_over,
             "team": self.current_player.get("team", ""),
-            "college": self.current_player.get("college", "Unknown")
+            "college": self.current_player.get("college", "Unknown"),
+            "game_mode": self.game_mode,
+            "turn": self.turn
         }
     
     def _is_player_used(self, player):
@@ -171,19 +188,46 @@ class NFLGame:
         # Valid answer
         self.current_player = found_player
         self.used_players.append(found_player)
+        
+        # Add to detailed player list
+        self.used_players_details.append({
+            "name": f"{found_player['firstName']} {found_player['lastName']}",
+            "position": found_player['position'],
+            "college": found_player.get("college", "Unknown"),
+            "turn": "player"
+        })
+        
         self.next_required_letter = found_player["lastName"][0].upper()
         
-        return {
+        # Handle computer's turn if in vs_computer mode
+        computer_turn_result = None
+        if self.game_mode == "vs_computer" and not self.game_over:
+            # Set turn to computer temporarily
+            self.turn = "computer"
+            computer_turn_result = self.computer_turn()
+            # Set turn back to player for the next round
+            self.turn = "player"
+        
+        result = {
             "valid": True,
             "message": "Correct!",
             "current_player": f"{found_player['firstName']} {found_player['lastName']} ({found_player['position']})",
             "next_required_letter": self.next_required_letter,
             "lives": self.lives,
             "used_players": len(self.used_players),
+            "used_players_details": self.used_players_details,
             "game_over": self.game_over,
             "team": found_player.get("team", ""),
-            "college": found_player.get("college", "Unknown")
+            "college": found_player.get("college", "Unknown"),
+            "game_mode": self.game_mode,
+            "turn": self.turn
         }
+        
+        # Include computer turn details if applicable
+        if computer_turn_result:
+            result["computer_turn"] = computer_turn_result
+        
+        return result
     
     def _find_player_in_database(self, name_parts):
         """
@@ -368,9 +412,12 @@ class NFLGame:
             "next_required_letter": self.next_required_letter,
             "lives": self.lives,
             "used_players": len(self.used_players),
+            "used_players_details": self.used_players_details,
             "game_over": self.game_over,
             "team": self.current_player.get("team", ""),
-            "college": self.current_player.get("college", "Unknown")
+            "college": self.current_player.get("college", "Unknown"),
+            "game_mode": self.game_mode,
+            "turn": self.turn
         }
     
     def to_dict(self):
@@ -378,10 +425,13 @@ class NFLGame:
         return {
             "players": self.players,
             "used_players": [self._player_to_dict(p) for p in self.used_players],
+            "used_players_details": self.used_players_details,
             "lives": self.lives,
             "current_player": self._player_to_dict(self.current_player) if self.current_player else None,
             "next_required_letter": self.next_required_letter,
-            "game_over": self.game_over
+            "game_over": self.game_over,
+            "game_mode": self.game_mode,
+            "turn": self.turn
         }
     
     def _player_to_dict(self, player):
@@ -399,17 +449,21 @@ class NFLGame:
     @classmethod
     def from_dict(cls, data):
         """Create a game instance from a dictionary."""
-        game = cls()
+        game = cls(game_mode=data.get("game_mode", "solo"))
         game.players = data.get("players", [])
         game.lives = data.get("lives", 3)
         game.current_player = data.get("current_player")
         game.next_required_letter = data.get("next_required_letter")
         game.game_over = data.get("game_over", False)
+        game.turn = data.get("turn", "player")
         
         # Rebuild the used_players list
         game.used_players = []
         for player_dict in data.get("used_players", []):
             game.used_players.append(player_dict)
+            
+        # Rebuild used_players_details
+        game.used_players_details = data.get("used_players_details", [])
         
         return game
 
@@ -422,4 +476,50 @@ class NFLGame:
             "lives": self.lives,
             "game_over": self.game_over,
             "error_type": "timeout"
+        }
+
+    def computer_turn(self):
+        """Computer takes its turn and returns a player."""
+        if self.game_over:
+            return None
+            
+        # Find players whose first name starts with the required letter
+        valid_players = [
+            p for p in self.players 
+            if p['firstName'].upper().startswith(self.next_required_letter) 
+            and not self._is_player_used(p)
+        ]
+        
+        if not valid_players:
+            # Computer can't find a player, loses a life
+            self.lose_life()
+            return {
+                "success": False,
+                "message": f"Computer couldn't find a player starting with {self.next_required_letter}.",
+                "lives": self.lives,
+                "game_over": self.game_over
+            }
+        
+        # Choose a random player from valid options
+        computer_player = random.choice(valid_players)
+        self.current_player = computer_player
+        self.used_players.append(computer_player)
+        
+        # Add to detailed player list
+        self.used_players_details.append({
+            "name": f"{computer_player['firstName']} {computer_player['lastName']}",
+            "position": computer_player['position'],
+            "college": computer_player.get("college", "Unknown"),
+            "turn": "computer"
+        })
+        
+        # Update next required letter
+        self.next_required_letter = computer_player["lastName"][0].upper()
+        
+        # Success!
+        return {
+            "success": True,
+            "player": f"{computer_player['firstName']} {computer_player['lastName']} ({computer_player['position']})",
+            "next_required_letter": self.next_required_letter,
+            "college": computer_player.get("college", "Unknown")
         } 

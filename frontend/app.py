@@ -41,9 +41,12 @@ def index():
 @app.route('/start_game', methods=['POST'])
 def start_game():
     """Start a new game and return the initial state."""
-    # Create a new game instance
-    game = NFLGame()
-    game_state = game.start_game()
+    # Get the requested game mode
+    game_mode = request.json.get('game_mode', 'solo')
+    
+    # Create a new game instance with the specified mode
+    game = NFLGame(game_mode=game_mode)
+    game_state = game.start_game(game_mode=game_mode)
     
     # Generate a unique session ID if not already present
     if 'session_id' not in session:

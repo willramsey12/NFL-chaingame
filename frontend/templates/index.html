@@ -569,6 +569,177 @@
                 font-size: 1.5rem;
             }
         }
+        
+        .game-modes {
+            margin: 2rem 0;
+            padding: 1rem;
+            background-color: rgba(1, 51, 105, 0.05);
+            border-radius: 10px;
+        }
+        
+        .game-modes h3 {
+            margin-bottom: 1rem;
+            color: var(--nfl-blue);
+        }
+        
+        .mode-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .mode-btn {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            transition: all 0.2s ease;
+        }
+        
+        .mode-btn.active {
+            opacity: 1;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(1, 51, 105, 0.3);
+        }
+        
+        .mode-description {
+            font-size: 0.9rem;
+            color: #555;
+            font-style: italic;
+            text-align: center;
+        }
+        
+        .used-players-container {
+            margin-top: 2rem;
+            padding: 1rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .used-players-container h3 {
+            color: var(--nfl-blue);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .used-players-list {
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 0.5rem;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        
+        .player-list-item {
+            padding: 0.8rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .player-list-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .player-list-item.computer {
+            border-left: 4px solid var(--nfl-red);
+        }
+        
+        .player-list-item.player {
+            border-left: 4px solid var(--nfl-blue);
+        }
+        
+        .player-list-item.starting {
+            border-left: 4px solid #3c8e4e;
+        }
+        
+        .player-list-name {
+            font-weight: 600;
+            color: var(--nfl-blue);
+        }
+        
+        .player-list-details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        
+        .player-list-position {
+            font-size: 0.8rem;
+            color: #666;
+            background-color: rgba(1, 51, 105, 0.1);
+            padding: 0.1rem 0.4rem;
+            border-radius: 50px;
+        }
+        
+        .player-list-college {
+            font-size: 0.7rem;
+            color: #888;
+            font-style: italic;
+        }
+        
+        .player-list-turn {
+            font-size: 0.7rem;
+            padding: 0.1rem 0.3rem;
+            border-radius: 4px;
+            color: white;
+            margin-left: 0.5rem;
+        }
+        
+        .player-list-turn.computer {
+            background-color: var(--nfl-red);
+        }
+        
+        .player-list-turn.player {
+            background-color: var(--nfl-blue);
+        }
+        
+        .player-list-turn.starting {
+            background-color: #3c8e4e;
+        }
+        
+        .game-header {
+            text-align: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .game-header h3 {
+            color: var(--nfl-blue);
+            font-size: 1.2rem;
+        }
+        
+        .computer-message {
+            padding: 1rem;
+            margin: 1rem 0;
+            background-color: rgba(213, 10, 10, 0.1);
+            border-radius: 8px;
+            text-align: center;
+            animation: fade-in 0.5s ease;
+        }
+        
+        @media (max-width: 768px) {
+            .mode-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .player-list-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .player-list-details {
+                align-items: flex-start;
+                margin-top: 0.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -582,6 +753,18 @@
             <div class="welcome-screen">
                 <h2>Welcome to NFL Player Chain</h2>
                 <p>Name NFL players where each player's first name starts with the first letter of the previous player's last name. You have 2 minutes for each turn. How many can you name before time runs out?</p>
+                
+                <div class="game-modes">
+                    <h3>Select Game Mode</h3>
+                    <div class="mode-buttons">
+                        <button id="solo-mode" class="btn mode-btn active"><i class="fas fa-user"></i> Solo Mode</button>
+                        <button id="vs-computer-mode" class="btn mode-btn"><i class="fas fa-robot"></i> vs Computer</button>
+                    </div>
+                    <p class="mode-description" id="mode-description">
+                        <strong>Solo Mode:</strong> Play against yourself and try to name as many players as possible.
+                    </p>
+                </div>
+                
                 <button id="start-game" class="btn"><i class="fas fa-football-ball"></i> Start New Game</button>
             </div>
         </div>
@@ -589,6 +772,10 @@
         <div class="game-container" id="game-area" style="display: none;">
             <div class="timer-container">
                 <div class="timer" id="timer"><i class="fas fa-clock"></i> 2:00</div>
+            </div>
+            
+            <div class="game-header">
+                <h3 id="game-mode-indicator">Solo Mode</h3>
             </div>
             
             <div class="player-info">
@@ -639,6 +826,13 @@
                 </div>
             </div>
             
+            <div class="used-players-container">
+                <h3>Players Used</h3>
+                <div class="used-players-list" id="used-players-list">
+                    <!-- Used players will be listed here -->
+                </div>
+            </div>
+            
             <div id="game-over" class="game-over" style="display: none;">
                 <h2>Game Over!</h2>
                 <p>You've lost all your lives. Great effort!</p>
@@ -678,6 +872,11 @@
             const hintBtn = document.getElementById('hint-btn');
             const hintText = document.getElementById('hint-text');
             const hintContainer = document.querySelector('.hint-container');
+            const soloModeBtn = document.getElementById('solo-mode');
+            const vsComputerModeBtn = document.getElementById('vs-computer-mode');
+            const modeDescription = document.getElementById('mode-description');
+            const gameModeIndicator = document.getElementById('game-mode-indicator');
+            const usedPlayersList = document.getElementById('used-players-list');
             
             let timerInterval;
             let timeLeft;
@@ -849,7 +1048,33 @@
                 return hints[Math.floor(Math.random() * hints.length)];
             }
             
-            // Start a new game
+            let selectedGameMode = 'solo';
+            
+            // Game mode selection
+            soloModeBtn.addEventListener('click', function() {
+                selectGameMode('solo');
+            });
+            
+            vsComputerModeBtn.addEventListener('click', function() {
+                selectGameMode('vs_computer');
+            });
+            
+            function selectGameMode(mode) {
+                selectedGameMode = mode;
+                
+                // Update UI
+                soloModeBtn.classList.toggle('active', mode === 'solo');
+                vsComputerModeBtn.classList.toggle('active', mode === 'vs_computer');
+                
+                // Update description
+                if (mode === 'solo') {
+                    modeDescription.innerHTML = '<strong>Solo Mode:</strong> Play against yourself and try to name as many players as possible.';
+                } else {
+                    modeDescription.innerHTML = '<strong>vs Computer Mode:</strong> Play against the computer. Take turns naming NFL players.';
+                }
+            }
+            
+            // Update the start game function to include the selected mode
             function startNewGame() {
                 welcomeScreen.style.display = 'none';
                 gameArea.style.display = 'block';
@@ -857,6 +1082,7 @@
                 messageArea.style.display = 'none';
                 hintContainer.style.display = 'block';
                 hintText.style.display = 'none';
+                usedPlayersList.innerHTML = '';
                 
                 playerInput.disabled = false;
                 submitAnswerBtn.disabled = false;
@@ -865,8 +1091,15 @@
                 currentStreak = 0;
                 streakCount.textContent = currentStreak;
                 
+                // Update game mode indicator
+                gameModeIndicator.textContent = selectedGameMode === 'solo' ? 'Solo Mode' : 'vs Computer Mode';
+                
                 fetch('/start_game', {
-                    method: 'POST'
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ game_mode: selectedGameMode })
                 })
                 .then(response => response.json())
                 .then(data => {
@@ -875,6 +1108,9 @@
                     nextLetterElement.textContent = data.next_required_letter;
                     livesCount.textContent = data.lives;
                     usedPlayersCount.textContent = data.used_players;
+                    
+                    // Update used players list
+                    updateUsedPlayersList(data.used_players_details);
                     
                     // Start the timer
                     startTimer();
@@ -889,6 +1125,35 @@
                 });
             }
             
+            function updateUsedPlayersList(playersDetails) {
+                // Clear current list
+                usedPlayersList.innerHTML = '';
+                
+                // Add each player
+                playersDetails.forEach(player => {
+                    const playerItem = document.createElement('div');
+                    playerItem.className = `player-list-item ${player.turn}`;
+                    
+                    const turnLabel = player.turn === 'player' ? 'You' : 
+                                     player.turn === 'computer' ? 'Computer' : 'Starting Player';
+                    
+                    playerItem.innerHTML = `
+                        <div class="player-list-name">${player.name}</div>
+                        <div class="player-list-details">
+                            <span class="player-list-position">${player.position}</span>
+                            <span class="player-list-college">${player.college}</span>
+                        </div>
+                        <div class="player-list-turn ${player.turn}">${turnLabel}</div>
+                    `;
+                    
+                    usedPlayersList.appendChild(playerItem);
+                });
+                
+                // Scroll to bottom
+                usedPlayersList.scrollTop = usedPlayersList.scrollHeight;
+            }
+            
+            // Add event listeners
             startGameBtn.addEventListener('click', startNewGame);
             playAgainBtn.addEventListener('click', startNewGame);
             
@@ -913,6 +1178,7 @@
                 }
             });
             
+            // Update submit answer function to handle computer turns
             function submitAnswer() {
                 const playerName = playerInput.value.trim();
                 if (!playerName) return;
@@ -943,6 +1209,9 @@
                         nextLetterElement.textContent = data.next_required_letter;
                         usedPlayersCount.textContent = data.used_players;
                         
+                        // Update used players list
+                        updateUsedPlayersList(data.used_players_details);
+                        
                         // Update streak
                         currentStreak++;
                         streakCount.textContent = currentStreak;
@@ -950,6 +1219,46 @@
                         // Show confetti on streaks of 5+
                         if (currentStreak % 5 === 0 && currentStreak > 0) {
                             createConfetti();
+                        }
+                        
+                        // Handle computer turn if in vs_computer mode
+                        if (data.computer_turn) {
+                            if (data.computer_turn.success) {
+                                setTimeout(() => {
+                                    // Show computer's move
+                                    const computerMessage = document.createElement('div');
+                                    computerMessage.className = 'computer-message';
+                                    computerMessage.innerHTML = `
+                                        <p><i class="fas fa-robot"></i> Computer played: <strong>${data.computer_turn.player}</strong></p>
+                                        <p>Next letter: <strong>${data.computer_turn.next_required_letter}</strong></p>
+                                    `;
+                                    
+                                    // Insert before the input container
+                                    const inputContainer = document.querySelector('.input-container');
+                                    inputContainer.parentNode.insertBefore(computerMessage, inputContainer);
+                                    
+                                    // Play sound
+                                    soundEffects.correct.play();
+                                    
+                                    // Update UI
+                                    nextLetterElement.textContent = data.computer_turn.next_required_letter;
+                                    
+                                    // Remove after 5 seconds
+                                    setTimeout(() => {
+                                        computerMessage.remove();
+                                    }, 5000);
+                                }, 1000);
+                            } else {
+                                // Computer couldn't find a player
+                                setTimeout(() => {
+                                    showMessage(`<i class="fas fa-robot"></i> ${data.computer_turn.message}`, 'error');
+                                    livesCount.textContent = data.computer_turn.lives;
+                                    
+                                    if (data.computer_turn.game_over) {
+                                        handleGameOver();
+                                    }
+                                }, 1000);
+                            }
                         }
                         
                         // Reset timer for next turn
