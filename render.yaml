@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: nfl-player-chain
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn frontend.app:app
+    plan: free
+    envVars:
+      - key: DEBUG
+        value: False
+      - key: LOGGING_LEVEL
+        value: INFO
+      - key: SECRET_KEY
+        generateValue: true
+    autoDeploy: true 
