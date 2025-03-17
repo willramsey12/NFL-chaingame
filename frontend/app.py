@@ -3,8 +3,9 @@ import os
 import logging
 from dotenv import load_dotenv
 
-# Load environment variables from .env file if present
-load_dotenv()
+# Load environment variables from .env file if present (local development only)
+if os.path.exists('.env'):
+    load_dotenv()
 
 # Configure logging
 logging_level = os.environ.get('LOGGING_LEVEL', 'DEBUG')
@@ -25,6 +26,12 @@ app.secret_key = os.environ.get('SECRET_KEY', 'nfl_game_secret_key')  # For sess
 # Create a global game instance that persists between requests
 # This avoids having to serialize/deserialize the entire players database
 GAME_INSTANCES = {}
+
+# Health check endpoint for Render
+@app.route('/health')
+def health_check():
+    """Simple health check endpoint for monitoring."""
+    return jsonify({"status": "healthy"}), 200
 
 @app.route('/')
 def index():
@@ -110,6 +117,9 @@ def timer_expired():
 
 if __name__ == '__main__':
     # Use environment variables for production settings
-    debug_mode = os.environ.get('DEBUG', 'True') == 'True'
+    debug_mode = os.environ.get('DEBUG', 'True').lower() == 'true'
+    
+    # Get port from environment variable (for Render compatibility)
     port = int(os.environ.get('PORT', 5001))
+    
     app.run(host='0.0.0.0', port=port, debug=debug_mode) 

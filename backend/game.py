@@ -22,10 +22,17 @@ class NFLGame:
     def load_players(self):
         """Load NFL player data from the JSON file."""
         script_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        data_path = os.environ.get('PLAYER_DATA_PATH', 
-                                   os.path.join(script_dir, 'data', 'players.json'))
+        default_path = os.path.join(script_dir, 'data', 'players.json')
+        
+        # Get data path from environment variable, fallback to default path
+        data_path = os.environ.get('PLAYER_DATA_PATH', default_path)
         
         try:
+            # Handle both absolute and relative paths
+            if not os.path.isabs(data_path):
+                data_path = os.path.join(script_dir, data_path)
+                
+            logger.info(f"Attempting to load player data from: {data_path}")
             with open(data_path, 'r') as file:
                 players = json.load(file)
                 logger.info(f"Successfully loaded {len(players)} players from {data_path}")

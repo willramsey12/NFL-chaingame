@@ -60,7 +60,16 @@ http://127.0.0.1:5001
 
 ## Deployment Options
 
-### Render.com (Easy for beginners)
+### Render.com (Recommended, One-Click Deploy)
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/willramsey12/NFL-chaingame)
+
+1. Click the "Deploy to Render" button above
+2. Follow the prompts to create your Render account if you don't have one
+3. Render will automatically configure your application based on the render.yaml file
+4. Your application will be available at a URL like `https://nfl-player-chain.onrender.com`
+
+### Render.com (Manual Setup)
 
 1. Sign up at [render.com](https://render.com)
 2. Create a new Web Service
